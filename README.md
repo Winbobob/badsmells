@@ -108,7 +108,7 @@
 
 - __Feature Detection__
     
-    In this feature extractor we aim to find the dictators and passangers in a project. We would analyse the number of commits per person throughout the project. The code for data collection can be found here [scraper.rb](features/uneven_person_commits/scraper.rb)
+    In this feature extractor we aim to find the dictators and passengers in a project. We would analyse the number of commits per person throughout the project. The code for data collection can be found here [scraper.rb](features/uneven_person_commits/scraper.rb)
 
 - __Feature detection results__
     
@@ -116,10 +116,10 @@
 
     Sample data table: 
 
-    | Contributor |Commits| 
-    |-------------|----------|
-    |Person 1|23|
-    |Person 2|160|
+    | commit sha |timestamp| anonymous username |
+    |-------------|----------|----------|
+    |0734a1482f009b4c6c8dbe16e34daf3c75567373|2015-04-15 21:40:03 UTC |Person_0|
+    |76d102926f51f882aefd8961a058c49538cd817c|2015-04-09 20:38:50 UTC |Person_1|
 
     The links to the entire data set for this extractor can be found here
     * [Project 1](features/uneven_person_commits/feature_results/project_1_person_commits.csv)
@@ -129,7 +129,7 @@
 
 - __Bad smells detector__
     
-    We are analysing the number of commits per contributor. If a contributor has number of commits less than 10% is identified as passanger and a contributor having commits greater than 75% is identified as dictator. This is an indication that work hasn't been distributed evenly amongst contributors and majority of the work was done by a set if individuals 'red flagged contributor'.
+    We are analysing the commiter's email id as the primary key to identify the contributted, thus there can also be a false alarm if a contributer uses two different email ids. If a contributor has number of commits less than 10% is identified as passenger and a contributor having commits greater than 75% is identified as dictator. This is an indication that work hasn't been distributed evenly amongst contributors and majority of the work was done by a set if individuals 'Redflagged contributor'.
     The bad smell detector can be found here [smell.rb](./features/uneven_person_commits/smell.rb)
 
         commits_per_person < 10% 
@@ -140,19 +140,15 @@
     The graphs for the results are as follows:
     
     ![](./features/uneven_person_commits/smell_results/project_1_person_commits.png)
-    **Mean:** 12.1 <br>
-    **Std Dev.:** 20.49<br>
-    **Redflagged week:** 8 with 72 commits __Bad Smell__
+    **Redflagged Contributor:** No passenger, No dictator
 
     ![](./features/uneven_person_commits/smell_results/project_2_person_commits.png)
-    **Mean:** 36.42 <br>
-    **Std Dev.:** 36.059<br>
-    **Redflagged week:** 13 with 133 commits __Bad Smell__
+    **Passenger:** 34 commits(7%) <br>
+    **Redflagged Contributor:** 1 passenger __Bad Smell__
 
     ![](./features/uneven_person_commits/smell_results/project_3_person_commits.png)
-    **Mean:** 18.2  <br>
-    **Std Dev.:** 19.06<br>
-    **Redflagged week:** 10 with 62 commits __Bad Smell__
+    **Passenger:** 8 commits (4%) <br>
+    **Redflagged Contributor:** 1 passenger __Bad Smell__
     
 **4. Uneven Issues Per Label**
 
