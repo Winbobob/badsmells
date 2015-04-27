@@ -31,7 +31,8 @@
 - __Bad smells detector__
     
     We are analysing the number of commits per week. If any week has number of commits more/less than 2 standard deviation from the mean(of commits) we would consider it as bad smell. This is an indication that work hasn't been distributed evenly and majority of the work was done in 'red flagged week'.
-    The bad smell detector can be found here [smell.rb](./features/uneven_commits/smell.rb)
+    The bad smell detector can be found here [smell.rb](./features/uneven_commits/smell.rb).
+    Criteria:
 
         commits_in_a_week > mean + 2 * standard_deviation 
         OR  commits_in_a_week < mean + 2 * standard_deviation
@@ -55,7 +56,7 @@
     **Std Dev.:** 19.06<br>
     **Redflagged week:** 10 with 62 commits __Bad Smell__
 
-**2. Uneven Time Distribution For Milestones**
+<!--**2. Uneven Time Distribution For Milestones**
 
 - __Feature Detection__
     
@@ -102,9 +103,9 @@
     ![](./features/uneven_commits/smell_milestones/project_3_commits.png)
     **Mean:** 18.2  <br>
     **Std Dev.:** 19.06<br>
-    **Redflagged week:** 10 with 62 commits __Bad Smell__
+    **Redflagged week:** 10 with 62 commits __Bad Smell__-->
 
-**3. Uneven Commits Per Person**
+**2. Uneven Commits Per Person**
 
 - __Feature Detection__
     
@@ -130,7 +131,8 @@
 - __Bad smells detector__
     
     We are analysing the commiter's email id as the primary key to identify the contributted, thus there can also be a false alarm if a contributer uses two different email ids. If a contributor has number of commits less than 10% is identified as passenger and a contributor having commits greater than 75% is identified as dictator. This is an indication that work hasn't been distributed evenly amongst contributors and majority of the work was done by a set if individuals 'Redflagged contributor'.
-    The bad smell detector can be found here [smell.rb](./features/uneven_person_commits/smell.rb)
+    The bad smell detector can be found here [smell.rb](./features/uneven_person_commits/smell.rb).
+    Criteria:
 
         commits_per_person < 10% 
         OR  commits_per_person > 75%
@@ -150,7 +152,7 @@
     **Passenger:** 8 commits (4%) <br>
     **Redflagged Contributor:** 1 passenger __Bad Smell__
     
-**4. Uneven Issues Per Label**
+**3. Uneven Issues Per Label**
 
 - __Feature Detection__
     
@@ -158,11 +160,11 @@
 
 - __Feature detection results__
     
-    Inorder to create the above feature we need the issue 'number', 'action' and the 'label name' attributes. We create a hashmap of label name and its corresponding issue count. We have used [events](https://developer.github.com/v3/issues/events) API endpoint to gather this data.
+    Inorder to create the above feature we need the 'issue number', 'action' and the 'label name' attributes. We create a hashmap of label name and its corresponding issue count. We have used [events](https://developer.github.com/v3/issues/events) API endpoint to gather this data.
 
     Sample data table: 
 
-    | Issue Number | event_created_at | action| label_name|
+    | issue number | event_created_at | action| label_name|
     |------------- |------------------|-------|-----------|
     |59|2015-04-05 19:12:41 UTC|labeled|Merged|
     |13|2015-04-04 18:33:50 UTC|unlabeled|Awaiting Developer's Feedback|
@@ -176,7 +178,8 @@
 - __Bad smells detector__
     
     We are analysing the number of commits per issues. If any label has number of commits more/less than 2 standard deviation from the mean(of commits) we would consider it as bad smell. This is an indication that that label could have been broken into more labels that would ave encouraged equal distrubution of issues. We have marked such labels as 'Redflagged labels'.
-    The bad smell detector can be found here [smell.rb](./features/uneven_label_issues/smell.rb)
+    The bad smell detector can be found here [smell.rb](./features/uneven_label_issues/smell.rb).
+    Criteria:
 
         commits_per_label > mean + 2 * standard_deviation 
       
@@ -200,7 +203,7 @@
     **Std Dev.:** 11.41<br>
     **Redflagged label:** No red flags
 
-**5. Issues Exceeding Milestone Due Date**
+**4. Issues Exceeding Milestone Due Date**
 
 - __Feature Detection__
     
@@ -226,7 +229,8 @@
 - __Bad smells detector__
     
     In comparing the issue closed date and the milestone due date if a milestone has more than 20% of issue that have closed date beyond the milestone due date is identified as a bad smell. It is also an indication that other milestones may have suffered or exceeded their due dates because of some missed deadline in previous milestones. We have marked such milestones as 'Redflagged Milestones'.
-    The bad smell detector can be found here [smell.rb](./features/issues_exceeding_milestone_duedate/smell.rb)
+    The bad smell detector can be found here [smell.rb](./features/issues_exceeding_milestone_duedate/smell.rb).
+    Criteria:
 
         20%  > number of (issue_closed_at > milestone_due_date)/total number of (issues) * 100
       
@@ -246,7 +250,7 @@
     **Issues exceeding Milestone due date:** 51 out of 64 <br>
     **Redflagged Milestones:** 79.7% __Bad Smell__
 
-**6. Unassigned Issues To Contributor**
+**5. Unassigned Issues (To Contributor)**
 
 - __Feature Detection__
     
@@ -271,23 +275,24 @@
 
 - __Bad smells detector__
     
-    The criteria for identifying unassigned issues is assignee equal to 'null'. To detect the bad smell we compare the number of unassigned issues with the total number of the issues and if the the percentage of unassigned issues exceeds 20% it is identified as a bad smell.  We have marked such issues as 'Redflagged Projects'.
-    The bad smell detector can be found here [smell.rb](./features/issues_exceeding_milestones/smell.rb)
+    The criteria for identifying unassigned issues is assignee equal to 'null'. To detect the bad smell we compare the number of unassigned issues with the total number of the issues and if the the percentage of unassigned issues exceeds 20% it is identified as a bad smell.  We have marked such issues as 'Redflagged Project'.
+    The bad smell detector can be found here [smell.rb](./features/unassigned_issues/smell.rb).
+    Criteria:
 
         20%  > number of (unassigned issues)/total number of (issues) * 100
       
 - __Bad smells results__
     
-    Theresults are as follows:
+    The results are as follows:
     
     **Unassigned Issues:** 7 out of 38<br>
-    **Redflagged Projects:** Not a bad smell
+    **Redflagged Project:** Not a bad smell
 
     **Unassigned Issues:** 54 out of 67<br>
-    **Redflagged Projects:** 80.59% __Bad Smell__
+    **Redflagged Project:** 80.59% __Bad Smell__
 
     **Unassigned Issues:** 32 out of 80<br>
-    **Redflagged Projects:** 40% __Bad Smell__
+    **Redflagged Project:** 40% __Bad Smell__
 
 **6. Lack of Code Review**
 
@@ -315,13 +320,14 @@
 - __Bad smells detector__
     
     It is generally a good practice to have 1 pull request corresponding to 1 open issue. However given that a pull request can solve multiple issues, we identify a project lacking code review if it has number of pull request less than half of the total number of issues. This assumption is an indicator that more code review should have been performed for each open issue via pull request. We have marked such code reviews as 'Redflagged Reviews'.
-    The bad smell detector can be found here [smell.rb](./features/code_review/smell.rb)
+    The bad smell detector can be found here [smell.rb](./features/code_review/smell.rb).
+    Criteria:
 
         50%  < number of (pull requests)/total number of (issues) * 100
       
 - __Bad smells results__
     
-    Theresults are as follows:
+    The results are as follows:
     
     **Pull Request Vs Issue Count:** 22 Vs 38<br>
     **Redflagged Reviews:** Not a bad smell
