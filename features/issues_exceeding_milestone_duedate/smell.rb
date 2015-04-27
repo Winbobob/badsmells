@@ -26,38 +26,25 @@ project_no = ARGV[0]
 
 issues = CSV.open("./feature_results/project_#{project_no}_issues.csv",'r').to_a
 
-ap issues
+issues_exceeding = 0
+total_issues = issues.count
 
 count = Hash.new{|h, k| h[k] = 0}
 
 issues.each do |issue|
   milestone_number = issue[2].to_i
   if(issue[4].eql? "yes")
+      issues_exceeding+=1
       count[milestone_number]+=1
   else
       count[milestone_number] = 0
   end
 end
 
-#final_count = Hash.new{|h, k| h[k] = 0}
-#
-#(count.keys.min..count.keys.max).each do |k|
-#  final_count[k - count.keys.min + 1] = count[k]
-#end
-#
-#ap final_count
-
+percentage = (issues_exceeding*100)/total_issues
 draw_plot(count.keys, count.values, "Project #{project_no} Issues")
 
-#sd = final_count.values.standard_deviation
-#mean = final_count.values.mean
-#range = mean + 2*sd
-#
-#puts "sd: #{sd}"
-#puts "mean: #{mean}"
-#puts "range: #{range}"
-#final_count.each do |k,v|
-#  if v > range
-#    puts "Redflagged week: #{k} with #{v} commits"
-#  end
-#end
+print "Issues exceeding: #{issues_exceeding} \n"
+print "Total issues: #{total_issues} \n"
+print "Percentage: #{percentage}%"
+

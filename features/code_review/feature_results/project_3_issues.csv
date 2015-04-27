@@ -1,0 +1,93 @@
+93,youtube link https://www.youtube.com/watch?v=ILf0m_i8IV4,8483477,issue
+92,Guys still need add some materials to slides and change slides' views ASAP. ,7797553,issue
+91,"Use below format to draw comparison diagram, you also can see some format from project1a's repo on github,",7797553,issue
+90,"add test data, diagram and analysis into README",7797553,pull_request
+89,Some use case of sql and nosql ,7323553,issue
+88,That might explain the i/o speed issue.,7323553,issue
+87,"I have merged test method, result and analysis into one file. Just combine your original .md file into one file.",7797553,issue
+86,"Check my ""Future Work"" part",8552211,issue
+85,"Anyone could help write the part ""difference in join performance between two database""",8552211,issue
+84,I don't think there should be some slides for analysis,7323553,issue
+83,I will not do the slides format correction,7323553,issue
+82,"Guys should make comple slides on VCL(_timmnix), others images lack supported packages.",7797553,issue
+81,Hma develop edit readme.md,8483477,pull_request
+80,Add slide into https://github.com/CSC510/txts,7797553,issue
+79,Slides: Future Work,7323553,issue
+78,Work Deadline!!,7797553,issue
+77,Readme: Conclusion Section,7323553,issue
+76,Readme: Discussion Section,7323553,issue
+75,Slides: Analysis & Methods & Result,7323553,issue
+74,Slides: Test results ,7323553,issue
+73,"Slides: Spring(mongodb,sql)",7323553,issue
+72,Slides: Introduction & General Comparison & Goal,7323553,issue
+71,Slides: Test Methods,7323553,issue
+70,Slides: Check Point,7323553,issue
+69,How to solve MySQL's multiple thread JUnit Test problem? ,7797553,issue
+68,Sections,7323553,pull_request
+67,Things to be done,7323553,issue
+66,Pli6,7797553,pull_request
+65,Report multi part,7323553,pull_request
+64,I have wrote a java program to transfer data into html.,7323553,issue
+63,About the data,7323553,issue
+62,Update the readme,7323553,issue
+61,Update readme and add img folder,7323553,pull_request
+60,Report: Introduction,8552211,issue
+59,Why is it so slow to delete data in mysql? ,7797553,issue
+58,Jesse dev,7323553,pull_request
+57,Project Rubrics !!,7323553,issue
+56,"I have fixed the Multi thread in find , will upload the code when finish the test.",7323553,issue
+55,Report: Introduction to our test methods.,8552211,issue
+54,where can I close mongodb's debug info? ,7797553,issue
+53,Multi Thread Find Performance Wrong Test,7323553,issue
+52,test bugs,7323553,issue
+51,it seems that too many thread has no benefit to nosql DATABASES,7323553,issue
+50,Compare the join performance in NOSQL/SQL,7323553,issue
+49,Change scale! Rerun test in Comparison between SQL and NOSQL in find performance,7323553,issue
+48,Change scale! Rerun test in Comparison between SQL and NOSQL in del performance,7323553,issue
+47,Change scale! Rerun test in Comparison between SQL and NOSQL in add performance,7323553,issue
+46,Multi Thread Find Performance Empty Data,7323553,issue
+45,Multi Thread Delete Performance Empty Data,7323553,issue
+44,Report: Introduction to our system design,8552211,issue
+43,Report: Introduction to several points we need to compare,8552211,issue
+42,Report: Introduction,8552211,issue
+41,Multi Thread Add Performance Wrong Data,7323553,issue
+40,mySQL cannot be installed correctly on my PC...,8552211,issue
+39,Trying to fix your pc tomorrow...,7323553,issue
+38,Hma develop,8483477,pull_request
+37,Pli5,7797553,pull_request
+36,Collecting the data by Today,7323553,issue
+35,"When I run multiple thread test of Mongodb, my IDE will dead. ",7797553,issue
+34,for lop,7323553,pull_request
+33,I have collected the data for both add performance ,7323553,issue
+32,Change Back to Hibernate,8483477,issue
+31,"I have added findByName and findAll method using mysql, and created HouseImpl and RequestImpl. ",7797553,issue
+30,"""new resources""",8483477,pull_request
+29,"I just check the document summarized by hma5, it is good but not enough. We still need more comparable points, more details and implementation methods.",7797553,issue
+28,We need merge all branches' code together and launch a new version.,7797553,issue
+27,Please upload the work you have done in SQL in your branch on create a pull request,7323553,issue
+26,Learn test techniques on Multi Thread,7323553,issue
+25,I've post some major difference between SQL and NOSQL on google drive,8552211,issue
+24,How do we merge SQL and NoSQL implementation together?  ,7797553,issue
+23,finish the web controller for base requirement,8483477,issue
+22,Sxu11,7323553,pull_request
+21,Do us a demo on the difference between sql and mongo,7323553,issue
+20,"Hi Jesse, I have fixed the RentAction's bug, please git pull my branch and recheck it. ",7797553,issue
+19,Should we implement service layer also as an interface?,7323553,issue
+18,working on service layer ,7323553,issue
+17,continue working on hibernate and trying to solve the configure problems.,7323553,issue
+16,finish basic service model,7323553,issue
+15,Learn how to implement multi thread on Unit Test,7323553,issue
+14,Have you guys made any progress these week?,7323553,issue
+13,Focus on Impl basic service on Mongo,7323553,issue
+12,I still can't migrate data into my local database. Do you have that problem,7797553,issue
+11,Feel free to close an issue if solved and don't want any help!,7323553,issue
+10,Do I need to implement a method findbyStudentID?,7323553,issue
+9,student uniqueness is not implemented!,7323553,issue
+8,"findbyID method in BaseDao is not correct, so is deleteByid Method",7323553,issue
+7,need to clarify the testing.,7323553,issue
+6,Compare and test,8483477,issue
+5,Test  ,8552211,issue
+4,"Test, Test, Test",8552211,issue
+3,Focus On test,8552211,issue
+2,BaseDaoImpl has a bug ,7323553,issue
+1,Sramase,10506563,pull_request

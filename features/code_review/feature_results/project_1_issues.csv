@@ -1,0 +1,60 @@
+60,Fixes #59: Create a project report.,9207378,pull_request
+59,Create a project report.,9207378,issue
+58,Update Report.,9207378,pull_request
+57,Change report skeleton,9207378,pull_request
+56,Create integration tests for Ruby parser,9343988,issue
+55,Create unit tests for Ruby parser,9343988,issue
+54,Create a project presentation.,9207378,issue
+53,Fixes #48: JSLint for JS code,9207378,pull_request
+52,Fixes #12: Basic working MVP in Ruby track,1014383,pull_request
+51,"Fixes #13, fixes #14, fixes #19: Added unit test cases for simple, medium and complex parsers",9343988,pull_request
+50,Fixes #49: Create a project report skeleton.,9207378,pull_request
+49,Create a project report skeleton.,9207378,issue
+48,JSLint for JS code,1014383,issue
+47,Fixes #9: Adds the Basic structure for the Ruby track parser,1014383,pull_request
+46,Fixes #44: Create a npm package for the javascript track,9207378,pull_request
+45,Fixes #26: Code for Very complex markdowns in JavaScript,9191082,pull_request
+44,Create a npm package for the javascript track,1014383,issue
+43,Fixes #41: Create Console based output for FuncationalParser,9207378,pull_request
+42,Fixes #25:Add Medium Complex Parsing Capabilities,9191082,pull_request
+41,Create Console based output for FuncationalParser,9191082,issue
+40,Fixes #39,1014383,pull_request
+39,Fix the basic structure of the Ruby Gem,1014383,issue
+38,Rohit,9191082,pull_request
+37,Add Simple Parser Sample File,9191082,issue
+36,Functional javascript parser,9343988,pull_request
+35,Simple JavaScript Parser,9191082,pull_request
+34,"Update Read Me, Tag File and Classification",9207378,pull_request
+33,Adds Ruby prototype and Gem ,1014383,pull_request
+32,Remove backup files,1014383,issue
+31,Do Tag Classification on the basis of Difficulty,9191082,pull_request
+30,Playground for Ruby,9343988,issue
+29,Playground for functional JavaScript,9343988,issue
+28,Additional Test(s) for OO vs Functional Analysis,9191082,issue
+27,"Rohit: Review, Add Functional JavaScript Sample",9191082,pull_request
+26,Code for Very complex markdowns in JavaScript,9343988,issue
+25,Code for medium complex markdowns in JavaScript,9343988,issue
+24,Added docs folder for research,1014383,pull_request
+23,Adding docs for research,1014383,issue
+22,added basic markdown tags and html mappings,9343988,pull_request
+21,Overall Comparison of OO Vs Functional Design,9191082,issue
+20,Discuss OO and Functional Challanges for Very Complex Design,9191082,issue
+19,Create Tests for Very complex design and improve existing design,9191082,issue
+18,Code for Very complex markdowns in Ruby,9191082,issue
+17,Clojure Vs JavaScript,9191082,issue
+16,Discuss OO and Functional Challanges for Medium Complex Design,9191082,issue
+15,Discuss OO and Functional Challanges for Simple Design,9191082,issue
+14,Create Tests for Medium complex design and improve existing design,9191082,issue
+13,Create Test cases for simple prototypes and improve existing designs,9191082,issue
+12,Code for medium/complex markdowns in Ruby,9191082,issue
+11,Two equivalent working simple prototypes in Ruby and JavaScript,9191082,issue
+10,"Define Milestones, Process and Segregate tasks based on them",9191082,issue
+9,Skeleton structure for Ruby track,9191082,issue
+8,Group Tags on the basis of complexity,9191082,issue
+7,Decide how to store Markdown to HTML mapping in JavaScript,9191082,issue
+6,Decide how to store Markdown to HTML mapping in Ruby,9191082,issue
+5,Create a Mapping of Markdown's HTML equivalents,9191082,issue
+4,Create a List of All Markdown Tags,9191082,issue
+3,Simple Prototype in JavaScript,1014383,issue
+2,JavaScript Proficiency ,1014383,issue
+1,Ruby proficiency ,1014383,issue
