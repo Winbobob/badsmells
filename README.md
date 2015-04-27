@@ -158,7 +158,7 @@
 
 - __Feature Detection__
     
-    In this feature extractor we aim to find irregular use of labels for issues. We would analyse the number and type of label per issue. In order to accomplish this we first get all the issues and then make an API request for labels corresponding to each issue. The code for data collection can be found here [scraper.rb](features/uneven_label_issues/scraper.rb)
+    In this feature extractor we aim to find irregular use of labels for issues. We would analyse the number of issue per label. In order to collect this data we fetched the issue events and then collected all the events which had label attribute.  The code for data collection can be found here [scraper.rb](features/uneven_label_issues/scraper.rb)
 
 - __Feature detection results__
     
