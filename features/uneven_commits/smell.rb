@@ -6,20 +6,22 @@ require 'descriptive_statistics'
 def draw_plot(xs, ys, title)
   Gnuplot.open do |gp|
     Gnuplot::Plot.new(gp) do |plot|
+      plot.style  "data histograms"
+      plot.xtics  "nomirror rotate by -45"
       plot.title title.capitalize
       plot.terminal 'png'
       plot.output "smell_results/#{title.gsub(/\s+/, "_").downcase}.png"
       plot.style "fill solid 0.5 border"
       plot.xlabel "Week No"
-      plot.ylabel "Commits"
+      plot.ylabel "Commits count"
+      
       plot.data << Gnuplot::DataSet.new([xs,ys]) do |ds|
+        ds.using = "2:xtic(1)"
         ds.notitle
-        ds.with = "boxes"
       end
     end
   end
 end
-
 project_no = ARGV[0]
 
 commits = CSV.open("./feature_results/project_#{project_no}_commits.csv",'r').to_a
