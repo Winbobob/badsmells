@@ -200,11 +200,11 @@
     **Std Dev.:** 11.41<br>
     **Redflagged label:** No red flags
 
-**5. Issues Exceeding Milestone Close Date**
+**5. Issues Exceeding Milestone Due Date**
 
 - __Feature Detection__
     
-    In this feature extractor we aim to find Redflagged Milestones that have large number of issues exceeding milestone due date i.e. that were closed post the Milestone due dates. We would anlyse that by comparing the due date for a milestone and all its issue close dates. The code for data collection can be found here [scraper.rb](features/issues_exceeding_milestones/scraper.rb)
+    In this feature extractor we aim to find Redflagged Milestones that have large number of issues exceeding milestone due date i.e. that were closed post the Milestone due dates. We would anlyse that by comparing the due date for a milestone and all its issue close dates. The code for data collection can be found here [scraper.rb](features/issues_exceeding_milestone_duedate/scraper.rb)
 
 - __Feature detection results__
     
@@ -212,21 +212,21 @@
 
     Sample data table: 
 
-    | issue number | closed_at | milestone title| due_on|
-    |------------- |-----------|----------------|-------|
-    |59|2015-03-09 19:12:41 UTC|"Milestone 1"|2015-03-05 19:12:41 UTC|
-    |13|2015-03-05 18:33:50 UTC|"Milestone 2"|2015-03-01 19:12:41 UTC|
+    | issue number | closed_at | milestone title| due_on| exceed|
+    |------------- |-----------|----------------|-------|-------|
+    |59|2015-03-09 19:12:41 UTC|"Milestone 1"|2015-03-05 19:12:41 UTC| yes|
+    |13|2015-03-05 18:33:50 UTC|"Milestone 2"|2015-03-01 19:12:41 UTC| no |
 
     The links to the entire data set for this extractor can be found here
-    * [Project 1](features/issues_exceeding_milestones/feature_results/project_1_milestone_issues.csv)
-    * [Project 2](features/issues_exceeding_milestones/feature_results/project_2_milestone_issues.csv)
-    * [Project 3](features/issues_exceeding_milestones/feature_results/project_3_milestone_issues-.csv)
+    * [Project 1](features/issues_exceeding_milestone_duedate/feature_results/project_1_issues.csv)
+    * [Project 2](features/issues_exceeding_milestone_duedate/feature_results/project_2_issues.csv)
+    * [Project 3](features/issues_exceeding_milestone_duedate/feature_results/project_3_issues-.csv)
 
 
 - __Bad smells detector__
     
     In comparing the issue closed date and the milestone due date if a milestone has more than 20% of issue that have closed date beyond the milestone due date is identified as a bad smell. It is also an indication that other milestones may have suffered or exceeded their due dates because of some missed deadline in previous milestones. We have marked such milestones as 'Redflagged Milestones'.
-    The bad smell detector can be found here [smell.rb](./features/issues_exceeding_milestones/smell.rb)
+    The bad smell detector can be found here [smell.rb](./features/issues_exceeding_milestone_duedate/smell.rb)
 
         20%  > number of (issue_closed_at > milestone_due_date)/total number of (issues) * 100
       
@@ -234,14 +234,17 @@
     
     The graphs for the results are as follows:
     
-    ![](./features/issues_exceeding_milestones/smell_results/project_1_milestone_issues.png)<br>
-    **Redflagged Milestones:** Needs Review with 21 Issues __Bad Smell__
+    ![](./features/issues_exceeding_milestone_duedate/smell_results/project_1_issues.png)<br>
+    **Issues exceeding Milestone due date:** 25 out of 35 <br>
+    **Redflagged Milestones:** 71.49% __Bad Smell__
 
-    ![](./features/issues_exceeding_milestones/smell_results/project_2_milestone_issues.png)<br>
-    **Redflagged Milestones:** solved with 30 issues __Bad Smell__
+    ![](./features/issues_exceeding_milestone_duedate/smell_results/project_2_issues.png)<br>
+    **Issues exceeding Milestone due date:** 27 out of 56 <br>
+    **Redflagged Milestones:** 48.21% __Bad Smell__
 
-    ![](./features/issues_exceeding_milestones/smell_results/project_3_milestone_issues.png)<br>
-    **Redflagged Milestones:** No red flags
+    ![](./features/issues_exceeding_milestone_duedate/smell_results/project_3_issues.png)<br>
+    **Issues exceeding Milestone due date:** 51 out of 64 <br>
+    **Redflagged Milestones:** 79.7% __Bad Smell__
 
 **6. Unassigned Issues**
 
@@ -268,7 +271,7 @@
 
 - __Bad smells detector__
     
-    The criteria for identifying unassigned issues is assignee equal to 'null'. To detect the bad smell we compare the number of unassigned issues with the total number of the issues and if the the percentage of unassigned issues exceeds 20% it is identified as a bad smell.  We have marked such issues as 'Redflagged Project'.
+    The criteria for identifying unassigned issues is assignee equal to 'null'. To detect the bad smell we compare the number of unassigned issues with the total number of the issues and if the the percentage of unassigned issues exceeds 20% it is identified as a bad smell.  We have marked such issues as 'Redflagged Projects'.
     The bad smell detector can be found here [smell.rb](./features/issues_exceeding_milestones/smell.rb)
 
         20%  > number of (unassigned issues)/total number of (issues) * 100
@@ -277,12 +280,12 @@
     
     Theresults are as follows:
     
-    **Unassigned Issues: ** 7 out of 38
-    **Redflagged Project:** Not a bad smell
+    **Unassigned Issues:** 7 out of 38<br>
+    **Redflagged Projects:** Not a bad smell
 
-    **Unassigned Issues: ** 54 out of 67
-    **Redflagged Project:** 80.59% __Bad Smell__
+    **Unassigned Issues:** 54 out of 67<br>
+    **Redflagged Projects:** 80.59% __Bad Smell__
 
-    **Unassigned Issues: ** 32 out of 80
-    **Redflagged Project:** 40% __Bad Smell__
+    **Unassigned Issues:** 32 out of 80<br>
+    **Redflagged Projects:** 40% __Bad Smell__
 
