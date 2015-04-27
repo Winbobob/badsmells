@@ -24,7 +24,7 @@ end
 
 project_no = ARGV[0]
 
-commits = CSV.open("./feature_results/project_#{project_no}_commits.csv",'r').to_a
+commits = CSV.open("./feature_results/project_#{project_no}_person_commits.csv",'r').to_a
 
 count = Hash.new{|h, k| h[k] = 0}
 
@@ -34,7 +34,7 @@ end
 
 
 ap count
-draw_plot(count.keys, count.values, "Project #{project_no}: User commits")
+draw_plot(count.keys, count.values, "Project #{project_no} Person commits")
 
 total = commits.count
 
