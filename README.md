@@ -172,15 +172,15 @@
     |2 | ready for merge, bug|
 
     The links to the entire data set for this extractor can be found here
-    * [Project 1](features/uneven_label_issues/feature_results/project_1_label_issues.csv)
-    * [Project 2](features/uneven_label_issues/feature_results/project_2_label_issues.csv)
-    * [Project 3](features/uneven_label_issues/feature_results/project_3_label_issues.csv)
+    * [Project 1](features/uneven_label_issues/feature_results/project_1_issues_labels.csv)
+    * [Project 2](features/uneven_label_issues/feature_results/project_2_issues_labels.csv)
+    * [Project 3](features/uneven_label_issues/feature_results/project_3_issues_labels.csv)
 
 
 - __Bad smells detector__
     
-    We are analysing the number of commits per issues. If any label has number of commits more/less than 2 standard deviation from the mean(of commits) we would consider it as bad smell. This is an indication that that label could have been broken into more labels that would ave encouraged equal distrubution of issues. We have marked such labels as 'red flagged labels'.
-    The bad smell detector can be found here [smell.rb](./features/uneven_commits/smell.rb)
+    We are analysing the number of commits per issues. If any label has number of commits more/less than 2 standard deviation from the mean(of commits) we would consider it as bad smell. This is an indication that that label could have been broken into more labels that would ave encouraged equal distrubution of issues. We have marked such labels as 'Redflagged labels'.
+    The bad smell detector can be found here [smell.rb](./features/uneven_label_issues/smell.rb)
 
         commits_per_label > mean + 2 * standard_deviation 
       
@@ -188,18 +188,19 @@
     
     The graphs for the results are as follows:
     
-    ![](./features/uneven_label_issues/smell_results/project_1_label_issues.png)
-    **Mean:** 12.1 <br>
-    **Std Dev.:** 20.49<br>
-    **Redflagged week:** 8 with 72 commits __Bad Smell__
+    ![](./features/uneven_label_issues/smell_results/project_1_labels_issues.png)
+    **Mean:** 6.39 <br>
+    **Std Dev.:** 5.82<br>
+    **Redflagged label:** Merged with 19 Issues __Bad Smell__
+    **Redflagged label:** Needs Review with 21 Issues __Bad Smell__
 
-    ![](./features/uneven_label_issues/smell_results/project_2_label_issues.png)
-    **Mean:** 36.42 <br>
-    **Std Dev.:** 36.059<br>
-    **Redflagged week:** 13 with 133 commits __Bad Smell__
+    ![](./features/uneven_label_issues/smell_results/project_2_labels_issues.png)
+    **Mean:** 11.1 <br>
+    **Std Dev.:** 8.82<br>
+    **Redflagged label:** solved with 30 issues __Bad Smell__
 
-    ![](./features/uneven_label_issues/smell_results/project_3_label_issues.png)
-    **Mean:** 18.2  <br>
-    **Std Dev.:** 19.06<br>
-    **Redflagged week:** 10 with 62 commits __Bad Smell__
+    ![](./features/uneven_label_issues/smell_results/project_3_labels_issues.png)
+    **Mean:** 14.28  <br>
+    **Std Dev.:** 11.41<br>
+    **Redflagged label:** No red flags __Bad Smell__
 
