@@ -18,8 +18,12 @@ pull_requests = issues.select(&:pull_request)
 no_unassigned_issues = 0
 CSV.open("./feature_results/project_#{project_no}_issues.csv",'wb') do |csv|
   issues.each do |issue|
-    
-    csv << [issue.number, issue.title, issue.assignee.nil? ? '' : issue.assignee.id]     
+    if issue.pull_request
+      action = "pull_request"
+    else
+      action = 'issue'
+    end     
+    csv << [issue.number, issue.title, issue.user.id, action]     
   end  
 end
 

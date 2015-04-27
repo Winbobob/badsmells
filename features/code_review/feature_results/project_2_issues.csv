@@ -1,0 +1,68 @@
+69,Future work: someone gets the trend of kbb price,4010644,issue
+68,Published papers,4010644,issue
+67,Get a video demo ,4010644,issue
+66,scrape model an put it in cars.json,4010644,issue
+65,We need separate huge .csv file,7702035,issue
+64,Meeting today,4010644,issue
+63,Topics to finish ,4010644,issue
+62,Full test for kbb,4010644,issue
+61,Report assignment,4010644,issue
+60,compare,10458961,pull_request
+59,Kbb price missing from emails received,10458961,issue
+58,Wrong crawling result from the page,10458961,issue
+57,"the unit of the mileage in craiglist is sometime kilo mileage, we need to change the code ",4010644,issue
+56,"We only send the car in one day, but there are three days now  ",4010644,issue
+55,Future of our project ,4010644,issue
+54,Reference of our project,4010644,issue
+53,web stress test,10458961,issue
+52,Scrape craiglist once every day in order to reduce time,4010644,issue
+51,Open a new process to send others email every day?,4010644,issue
+50,The link in the email is not working,4010644,issue
+49,Time changing for the project,4010644,issue
+48,How to compare two crawlering strategies?,4010644,issue
+47,There is white Space in Input,4010644,issue
+46,One good tutorial for scrapy,4010644,issue
+45, Heroku's 60s boot timeout ,4010644,issue
+44,1X dynos support no more than 256 processes in heroku?,4010644,issue
+43,craglist crawler miss some cars,4010644,issue
+42,Make the generated html easier to read?,4010644,issue
+41,Bug,4010644,issue
+40,Login,4010644,issue
+39,Why is there little difference between the price I scraped and that I click on the website?,4010644,issue
+38,"I put my sendemail account and password in the code, and it is compromised",4010644,issue
+37,Python unit testing framework,10458961,issue
+36,Add a milestone in github according to the ppt,4010644,issue
+35,"How to set up heroku, should we come up with a document?",4010644,issue
+34,The website didn't work well on firefox?,4010644,issue
+33,"Run a program once every day? schedule.enter(delay, priority, action, arguments)",4010644,issue
+32,Connect to Heroku remote database in python?,4010644,issue
+31,Send email,4010644,issue
+30,How to test our framework in Heroku?,4010644,issue
+29,Add select options on web page.,7702035,issue
+28,We need use PostgreSQL database on Heroku,7702035,issue
+27,We have already deploy our web on Heroku,7702035,issue
+26,"I have set a simple web, How to upload my web?",4010644,issue
+25,We need Django framework to construct our web application,7702035,issue
+24,I think we need a light-weighted database on web application,7702035,issue
+23,May be I should install IE on Ubuntu and try Subscribe again.,7702035,issue
+22,Subscribe not working?,4010644,issue
+21,"use javascript to manipulate .txt file, but only in IE browser",7702035,issue
+20,Getting information from users,10458961,issue
+19,Function design for interaction model,4010644,issue
+18,Function design for view,7702035,issue
+17,Function design for model,4010644,issue
+16,"If we store the price information from kbb in our database and send it to users, will it infringe the copyright?",10458961,issue
+15,System test,4010644,issue
+14,How to make the program run only once every day in the server,4010644,issue
+13,error: commit your changes or stash them before you can merge.Aborting,4010644,issue
+12,We need XML or json to store data,7702035,issue
+11,"If we use ruby to build the webpage and use python for coding, will the compatibility be a problem?",10458961,issue
+10,"What's the meaning of ""lower()"" ?",7702035,issue
+9,Why there are so many time points printed during crawling?,7702035,issue
+8,Web Service,7702035,issue
+7,What user information do we need in our web ,4010644,issue
+6,"car id for make, model, year, type",4010644,issue
+5,How to merge several branches in github?,4010644,issue
+4,unit test for kbb ,4010644,issue
+3,web framework,4010644,issue
+2,kbb crawler,4010644,issue
