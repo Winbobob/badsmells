@@ -228,7 +228,7 @@
     In comparing the issue closed date and the milestone due date if a milestone has more than 20% of issue that have closed date beyond the milestone due date is identified as a bad smell. It is also an indication that other milestones may have suffered or exceeded their due dates because of some missed deadline in previous milestones. We have marked such milestones as 'Redflagged Milestones'.
     The bad smell detector can be found here [smell.rb](./features/issues_exceeding_milestones/smell.rb)
 
-        20  > number of (issue_closed_at > milestone_due_date)/total number of (issues) * 100
+        20%  > number of (issue_closed_at > milestone_due_date)/total number of (issues) * 100
       
 - __Bad smells results__
     
@@ -243,7 +243,7 @@
     ![](./features/issues_exceeding_milestones/smell_results/project_3_milestone_issues.png)<br>
     **Redflagged Milestones:** No red flags
 
-**5. Unassigned Issues**
+**6. Unassigned Issues**
 
 - __Feature Detection__
     
@@ -251,38 +251,38 @@
 
 - __Feature detection results__
     
-    Above feature was created by fetching issue 'number', issue 'close_at', it's milestone 'title', and due_on' attributes. We have used [milestone](https://developer.github.com/v3/issues/milestones/) API endpoint to gather this data.
+    Above feature was created by fetching issue 'number', 'title', and 'asigness' attributes. We have used [issues](https://developer.github.com/v3/issues/) API endpoint to gather this data.
 
     Sample data table: 
 
     | issue number | issue title | assignee|
     |------------- |-----------|----------------|
-    |59|2015-03-09 19:12:41 UTC|"Milestone 1"|
-    |13|2015-03-05 18:33:50 UTC|"Milestone 2"|
+    |59|Create a project report.|9207378|
+    |49|Create a project report skeleton.|9207378|
 
     The links to the entire data set for this extractor can be found here
     * [Project 1](features/unassigned_issues/feature_results/project_1_unassigned_issues.csv)
-    * [Project 2](features/unassigned_issues/feature_results/project_2_milestone_issues.csv)
-    * [Project 3](features/unassigned_issues/feature_results/project_3_milestone_issues-.csv)
+    * [Project 2](features/unassigned_issues/feature_results/project_2_unassigned_issues.csv)
+    * [Project 3](features/unassigned_issues/feature_results/project_3_unassigned_issues-.csv)
 
 
 - __Bad smells detector__
     
-    In comparing the issue closed date and the milestone due date if a milestone has more than 20% of issue that have closed date beyond the milestone due date is identified as a bad smell. It is also an indication that other milestones may have suffered or exceeded their due dates because of some missed deadline in previous milestones. We have marked such milestones as 'Redflagged Milestones'.
+    The criteria for identifying unassigned issues is assignee equal to 'null'. To detect the bad smell we compare the number of unassigned issues with the total number of the issues and if the the percentage of unassigned issues exceeds 20% it is identified as a bad smell.  We have marked such issues as 'Redflagged Project'.
     The bad smell detector can be found here [smell.rb](./features/issues_exceeding_milestones/smell.rb)
 
-        20  > number of (issue_closed_at > milestone_due_date)/total number of (issues) * 100
+        20%  > number of (unassigned issues)/total number of (issues) * 100
       
 - __Bad smells results__
     
-    The graphs for the results are as follows:
+    Theresults are as follows:
     
-    ![](./features/issues_exceeding_milestones/smell_results/project_1_milestone_issues.png)<br>
-    **Redflagged Milestones:** Needs Review with 21 Issues __Bad Smell__
+    **Unassigned Issues: ** 7 out of 38
+    **Redflagged Project:** Not a bad smell
 
-    ![](./features/issues_exceeding_milestones/smell_results/project_2_milestone_issues.png)<br>
-    **Redflagged Milestones:** solved with 30 issues __Bad Smell__
+    **Unassigned Issues: ** 54 out of 67
+    **Redflagged Project:** 80.59% __Bad Smell__
 
-    ![](./features/issues_exceeding_milestones/smell_results/project_3_milestone_issues.png)<br>
-    **Redflagged Milestones:** No red flags
+    **Unassigned Issues: ** 32 out of 80
+    **Redflagged Project:** 40% __Bad Smell__
 
