@@ -9,10 +9,10 @@ repo_name =  ARGV[0]
 project_no = ARGV[1]
 
 Octokit.auto_paginate = true
-commits = Octokits.commits(repo_name)
+commits = Octokit.commits(repo_name)
 authors = []
 
-CSV.open("./feature_results/project_#{project_no}_commits.csv",'wb') do |csv|
+CSV.open("./feature_results/project_#{project_no}_person_commits.csv",'wb') do |csv|
   commits.each do |commit|
     if commit.commit.committer.email=~ /users\.noreply\.github\.com/
       next
