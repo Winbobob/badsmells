@@ -158,18 +158,18 @@
 
 - __Feature Detection__
     
-    In this feature extractor we aim to find irregular use of labels for issues. We would analyse the number of issue per label. In order to collect this data we fetched the issue events and then collected all the events which had label attribute.  The code for data collection can be found here [scraper.rb](features/uneven_label_issues/scraper.rb)
+    In this feature extractor we aim to find irregular use of labels. We would analyse the number of issue per label. To collect this data we fetched the issue events and then collected all the events which had label attribute.  The code for data collection can be found here [scraper.rb](features/uneven_label_issues/scraper.rb)
 
 - __Feature detection results__
     
-    Inorder to create the above feature we need the issue 'number' and the comma seperated 'labels' attributes. We have used [issues](https://developer.github.com/v3/issues/) API endpoint to gather this data.
+    Inorder to create the above feature we need the issue 'number', 'action' and the 'label name' attributes. We create a hashmap of label name and its corresponding issue count. We have used [events](https://developer.github.com/v3/issues/events) API endpoint to gather this data.
 
     Sample data table: 
 
-    | Issue Number |labels|  
-    |------------- |------|
-    |1 | need review, awaiting developer's feedback|
-    |2 | ready for merge, bug|
+    | Issue Number | event_created_at | action| label_name|
+    |------------- |------------------|-------|-----------|
+    |59|2015-04-05 19:12:41 UTC|labeled|Merged|
+    |13|2015-04-04 18:33:50 UTC|unlabeled|Awaiting Developer's Feedback|
 
     The links to the entire data set for this extractor can be found here
     * [Project 1](features/uneven_label_issues/feature_results/project_1_issues_labels.csv)
@@ -202,5 +202,5 @@
     ![](./features/uneven_label_issues/smell_results/project_3_labels_issues.png)
     **Mean:** 14.28  <br>
     **Std Dev.:** 11.41<br>
-    **Redflagged label:** No red flags __Bad Smell__
+    **Redflagged label:** No red flags
 
