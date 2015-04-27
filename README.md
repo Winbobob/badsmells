@@ -208,7 +208,7 @@
 
 - __Feature detection results__
     
-    Above feature was created by fetching issue 'number', issue 'close_at', it's milestone 'title', and due_on' attributes. We have used [milestone](https://developer.github.com/v3/issues/milestones/) API endpoint to gather this data.
+    Above feature was created by fetching issue 'number', issue 'close_at', it's milestone 'title', and due_on' attributes. We have used [issues](https://developer.github.com/v3/issues/) API endpoint to gather this data.
 
     Sample data table: 
 
@@ -220,7 +220,7 @@
     The links to the entire data set for this extractor can be found here
     * [Project 1](features/issues_exceeding_milestone_duedate/feature_results/project_1_issues.csv)
     * [Project 2](features/issues_exceeding_milestone_duedate/feature_results/project_2_issues.csv)
-    * [Project 3](features/issues_exceeding_milestone_duedate/feature_results/project_3_issues-.csv)
+    * [Project 3](features/issues_exceeding_milestone_duedate/feature_results/project_3_issues.csv)
 
 
 - __Bad smells detector__
@@ -246,7 +246,7 @@
     **Issues exceeding Milestone due date:** 51 out of 64 <br>
     **Redflagged Milestones:** 79.7% __Bad Smell__
 
-**6. Unassigned Issues**
+**6. Unassigned Issues To Contributor**
 
 - __Feature Detection__
     
@@ -266,7 +266,7 @@
     The links to the entire data set for this extractor can be found here
     * [Project 1](features/unassigned_issues/feature_results/project_1_unassigned_issues.csv)
     * [Project 2](features/unassigned_issues/feature_results/project_2_unassigned_issues.csv)
-    * [Project 3](features/unassigned_issues/feature_results/project_3_unassigned_issues-.csv)
+    * [Project 3](features/unassigned_issues/feature_results/project_3_unassigned_issues.csv)
 
 
 - __Bad smells detector__
@@ -289,3 +289,45 @@
     **Unassigned Issues:** 32 out of 80<br>
     **Redflagged Projects:** 40% __Bad Smell__
 
+**6. Lack of Code Review**
+
+- __Feature Detection__
+    
+    In this feature extractor we aim to detect the lack of code review process within a team for merging code. This would also provide us with the hint if the branches were properly utilized for creating features or the code was directly merged into the master. The code for data collection can be found here [scraper.rb](features/code_review/scraper.rb)
+
+- __Feature detection results__
+    
+    Above feature was created by fetching issue 'api_issue_number', 'issue/pull request title', 'user_id' and 'issue or pull_request' attributes. We have used [issues](https://developer.github.com/v3/issues/) API endpoint to gather this data.
+
+    Sample data table: 
+
+    | api_issue_number | issue/pull request title | user_id| issue or pull_request
+    |------------- |-----------|----------------|-----------|
+    |59|Create a project report.|9207378|issue|
+    |58|Update Report.|9207378|pull_request|
+
+    The links to the entire data set for this extractor can be found here
+    * [Project 1](features/code_review/feature_results/project_1_issues.csv)
+    * [Project 2](features/code_review/feature_results/project_2_issues.csv)
+    * [Project 3](features/code_review/feature_results/project_3_issues.csv)
+
+
+- __Bad smells detector__
+    
+    It is generally a good practice to have 1 pull request corresponding to 1 open issue. However given that a pull request can solve multiple issues, we identify a project lacking code review if it has number of pull request less than half of the total number of issues. This assumption is an indicator that more code review should have been performed for each open issue via pull request. We have marked such code reviews as 'Redflagged Reviews'.
+    The bad smell detector can be found here [smell.rb](./features/code_review/smell.rb)
+
+        50%  < number of (pull requests)/total number of (issues) * 100
+      
+- __Bad smells results__
+    
+    Theresults are as follows:
+    
+    **Pull Request Vs Issue Count:** 22 Vs 38<br>
+    **Redflagged Reviews:** Not a bad smell
+
+    **Unassigned Issues:** 1 Vs 67<br>
+    **Redflagged Reviews:** 1.49% __Bad Smell__
+
+    **Unassigned Issues:** 13 Vs 80<br>
+    **Redflagged reviews:** 16.25% __Bad Smell__
