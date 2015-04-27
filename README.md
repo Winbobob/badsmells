@@ -139,17 +139,17 @@
     
     The graphs for the results are as follows:
     
-    ![](./features/uneven_commits/uneven_person_commits/project_1_person_commits.png)
+    ![](./features/uneven_person_commits/smell_results/project_1_person_commits.png)
     **Mean:** 12.1 <br>
     **Std Dev.:** 20.49<br>
     **Redflagged week:** 8 with 72 commits __Bad Smell__
 
-    ![](./features/uneven_commits/uneven_person_commits/project_2_person_commits.png)
+    ![](./features/uneven_person_commits/smell_results/project_2_person_commits.png)
     **Mean:** 36.42 <br>
     **Std Dev.:** 36.059<br>
     **Redflagged week:** 13 with 133 commits __Bad Smell__
 
-    ![](./features/uneven_commits/uneven_person_commits/project_3_person_commits.png)
+    ![](./features/uneven_person_commits/smell_results/project_3_person_commits.png)
     **Mean:** 18.2  <br>
     **Std Dev.:** 19.06<br>
     **Redflagged week:** 10 with 62 commits __Bad Smell__
