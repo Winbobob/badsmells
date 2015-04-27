@@ -44,6 +44,7 @@ count.each do |k,v|
     puts "Dictator person: #{k} with #{v} commits"
   end
   if percentage < 10
+    puts percentage
     puts "Freeloader person: #{k} with #{v} commits"
   end
 
