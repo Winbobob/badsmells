@@ -40,7 +40,7 @@ final_count = Hash.new{|h, k| h[k] = 0}
 end
 
 ap final_count
-draw_plot(final_count.keys, final_count.values, "Project #{project_no} commits")
+draw_plot(final_count.keys.map(&:to_s), final_count.values, "Project #{project_no} commits")
 
 sd = final_count.values.standard_deviation
 mean = final_count.values.mean
