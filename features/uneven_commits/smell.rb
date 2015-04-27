@@ -15,7 +15,6 @@ def draw_plot(xs, ys, title)
       plot.data << Gnuplot::DataSet.new([xs,ys]) do |ds|
         ds.notitle
         ds.with = "boxes"
-
       end
     end
   end
