@@ -30,7 +30,7 @@
 
 - __Bad smells detector__
     
-    We are analysing the number of commits per week. If any week has number of commits more/less than 2 standard deviation from the mean(of commits) we would consider it as bad smell. This is an indication that work hasn't been distributed evenly and majority of the work was done in 'red flagged week'.
+    We are analysing the number of commits per week. If any week has number of commits more/less than 2 standard deviation from the mean(of commits) we would consider it as bad smell. This is an indication that work hasn't been distributed evenly and majority of the work was done in 'red flagged Week'.
     The bad smell detector can be found here [smell.rb](./features/uneven_commits/smell.rb).
    <br>*Criteria:*
 
@@ -40,21 +40,23 @@
 - __Bad smells results__
     
     The graphs for the results are as follows:
-    
+    *Project 1*
     ![](./features/uneven_commits/smell_results/project_1_commits.png)<br>
     **Mean:** 12.1 <br>
     **Std Dev.:** 20.49<br>
-    **Redflagged week:** 8 with 72 commits __Bad Smell__
+    **Redflagged Week:** 8 with 72 commits __Bad Smell__
 
+    *Project 2*
     ![](./features/uneven_commits/smell_results/project_2_commits.png)<br>
     **Mean:** 36.42 <br>
     **Std Dev.:** 36.059<br>
-    **Redflagged week:** 13 with 133 commits __Bad Smell__
+    **Redflagged Week:** 13 with 133 commits __Bad Smell__
 
+    *Project 3*
     ![](./features/uneven_commits/smell_results/project_3_commits.png)<br>
     **Mean:** 18.2  <br>
     **Std Dev.:** 19.06<br>
-    **Redflagged week:** 10 with 62 commits __Bad Smell__
+    **Redflagged Week:** 10 with 62 commits __Bad Smell__
 
 <!--**2. Uneven Time Distribution For Milestones**
 
@@ -141,13 +143,16 @@
     
     The graphs for the results are as follows:
     
+    *Project 1*
     ![](./features/uneven_person_commits/smell_results/project_1_person_commits.png)
     **Redflagged Contributor:** No passenger, No dictator
 
+    *Project 2*
     ![](./features/uneven_person_commits/smell_results/project_2_person_commits.png)
     **Passenger:** 34 commits(7%) <br>
     **Redflagged Contributor:** 1 passenger __Bad Smell__
 
+    *Project 3*
     ![](./features/uneven_person_commits/smell_results/project_3_person_commits.png)
     **Passenger:** 8 commits (4%) <br>
     **Redflagged Contributor:** 1 passenger __Bad Smell__
@@ -177,7 +182,7 @@
 
 - __Bad smells detector__
     
-    We are analysing the number of commits per issues. If any label has number of commits more/less than 2 standard deviation from the mean(of commits) we would consider it as bad smell. This is an indication that that label could have been broken into more labels that would ave encouraged equal distrubution of issues. We have marked such labels as 'Redflagged labels'.
+    We are analysing the number of commits per issues. If any label has number of commits more/less than 2 standard deviation from the mean(of commits) we would consider it as bad smell. This is an indication that that label could have been broken into more labels that would ave encouraged equal distrubution of issues. We have marked such labels as 'Redflagged Labels'.
     The bad smell detector can be found here [smell.rb](./features/uneven_label_issues/smell.rb).
    <br>*Criteria:*
 
@@ -187,21 +192,24 @@
     
     The graphs for the results are as follows:
     
+    *Project 1*
     ![](./features/uneven_label_issues/smell_results/project_1_labels_issues.png)<br>
     **Mean:** 6.39 <br>
     **Std Dev.:** 5.82<br>
-    **Redflagged label:** Merged with 19 Issues __Bad Smell__<br>
-    **Redflagged label:** Needs Review with 21 Issues __Bad Smell__
+    **Redflagged Label:** Merged with 19 Issues __Bad Smell__<br>
+    **Redflagged Label:** Needs Review with 21 Issues __Bad Smell__
 
+    *Project 2*
     ![](./features/uneven_label_issues/smell_results/project_2_labels_issues.png)<br>
     **Mean:** 11.1 <br>
     **Std Dev.:** 8.82<br>
-    **Redflagged label:** solved with 30 issues __Bad Smell__
+    **Redflagged Label:** solved with 30 issues __Bad Smell__
 
+    *Project 3*
     ![](./features/uneven_label_issues/smell_results/project_3_labels_issues.png)<br>
     **Mean:** 14.28  <br>
     **Std Dev.:** 11.41<br>
-    **Redflagged label:** No red flags
+    **Redflagged Label:** No red flags
 
 **4. Issues Exceeding Milestone Due Date**
 
@@ -238,14 +246,17 @@
     
     The graphs for the results are as follows:
     
+    *Project 1*
     ![](./features/issues_exceeding_milestone_duedate/smell_results/project_1_issues.png)<br>
     **Issues exceeding Milestone due date:** 25 out of 35 <br>
     **Redflagged Milestones:** 71.49% __Bad Smell__
 
+    *Project 2*
     ![](./features/issues_exceeding_milestone_duedate/smell_results/project_2_issues.png)<br>
     **Issues exceeding Milestone due date:** 27 out of 56 <br>
     **Redflagged Milestones:** 48.21% __Bad Smell__
 
+    *Project 3*
     ![](./features/issues_exceeding_milestone_duedate/smell_results/project_3_issues.png)<br>
     **Issues exceeding Milestone due date:** 51 out of 64 <br>
     **Redflagged Milestones:** 79.7% __Bad Smell__
@@ -285,12 +296,15 @@
     
     The results are as follows:
     
+    *Project 1*
     **Unassigned Issues:** 7 out of 38<br>
     **Redflagged Project:** Not a bad smell
 
+    *Project 2*
     **Unassigned Issues:** 54 out of 67<br>
     **Redflagged Project:** 80.59% __Bad Smell__
 
+    *Project 3*
     **Unassigned Issues:** 32 out of 80<br>
     **Redflagged Project:** 40% __Bad Smell__
 
@@ -329,11 +343,62 @@
     
     The results are as follows:
     
+    *Project 1*
     **Pull Request Vs Issue Count:** 22 Vs 38<br>
     **Redflagged Reviews:** Not a bad smell
 
+    *Project 2*
     **Unassigned Issues:** 1 Vs 67<br>
     **Redflagged Reviews:** 1.49% __Bad Smell__
 
+    *Project 3*
     **Unassigned Issues:** 13 Vs 80<br>
     **Redflagged reviews:** 16.25% __Bad Smell__
+
+
+**7. Issues Without Milestones**
+
+- __Feature Detection__
+    
+    Our aim in this feature extractor is to find the issues that were dangling and not part of any milestones. This reflects the lack of planning or inability of the groups to identify correct milestone for the issue. The code for data collection can be found here [scraper.rb](features/issues_without_milestones/scraper.rb)
+
+- __Feature detection results__
+    
+    Above feature was created by fetching issue 'id', and corresponding milestone 'number' attributes. We have used [issues](https://developer.github.com/v3/issues/) API endpoint to gather this data.
+
+    Sample data table: 
+
+    | issue_id | milestone_number |has_milestone|
+    |------------- |-----------|----------------|
+    |66466828|5|no|
+    |66351991|3|no|
+
+    The links to the entire data set for this extractor can be found here
+    * [Project 1](features/issues_without_milestones/feature_results/project_1_issues.csv)
+    * [Project 2](features/issues_without_milestones/feature_results/project_2_issues.csv)
+    * [Project 3](features/issues_without_milestones/feature_results/project_3_issues.csv)
+
+
+- __Bad smells detector__
+    
+    The criteria used for indentifying the project's issues as dangling project issues only if the number of dangling issues are greater than 10%. We have marked such projects as 'Dangling Project Issues'.
+    The bad smell detector can be found here [smell.rb](./features/issues_without_milestones /smell.rb).
+   <br>*Criteria:*
+
+        10%  > number of (dangling_issues)/total number of (issues) * 100
+      
+- __Bad smells results__
+    
+    The results are as follows:
+    
+    *Project 1*
+    **Pull Request Vs Issue Count:** 3 out of 60<br>
+    **Dangling Project Issues:** Not a bad smell
+
+    *Project 2*
+    **Unassigned Issues:** 11 out of 68<br>
+    **Dangling Project Issues:** 16% __Bad Smell__
+
+    *Project 3*
+    **Unassigned Issues:** 16 out of 93<br>
+    **Dangling Project Issues:** 17% __Bad Smell__
