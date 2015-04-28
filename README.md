@@ -30,7 +30,7 @@ In the data collection phase, data of desired features was collected from the Gi
 ## Data:
 
 |No|Feature|Project1(rows)|Project2(rows)|Project3(rows)|
-|--|:------|:--------:|:----------:|:--------:|
+|--|-------|--------|----------|--------|
 |1|Uneven Commit History|121|510|182|
 |2|Uneven Commits Per Person|117|483|168|
 |3|Uneven Issues Per Label|201|120|107|
@@ -122,7 +122,7 @@ The links to the entire data set for this extractor can be found here
 * [Project 2](features/code_review/feature_results/project_2_issues.csv)
 * [Project 3](features/code_review/feature_results/project_3_issues.csv)
   
-  
+
 ## Features & Bad smells(Extractor & Results) 
 
 **1. Uneven Commit History**
