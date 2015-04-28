@@ -12,7 +12,6 @@ Octokit.auto_paginate = true
 
 issues = Octokit.list_issues(repo_name, state:'closed')
 
-issues_wo_ms = 0
 total_issues = issues.count
 
 CSV.open("./feature_results/project_#{project_no}_issues.csv",'wb') do |csv|
@@ -22,7 +21,6 @@ CSV.open("./feature_results/project_#{project_no}_issues.csv",'wb') do |csv|
           smell = ""
           milestone_number = ""
           if issue.milestone == nil
-              issues_wo_ms+=1
               smell = "yes"
           else
               milestone_number = issue.milestone.number.to_s
@@ -32,9 +30,3 @@ CSV.open("./feature_results/project_#{project_no}_issues.csv",'wb') do |csv|
       end
   end
 end
-
-percentage = (issues_wo_ms * 100)/total_issues
-
-print "Issues without milestones: #{issues_wo_ms}% \n"
-print "Total issues: #{total_issues}% \n"
-print "Percentage: #{percentage}% \n"
