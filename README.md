@@ -3,6 +3,124 @@
 2. SuperCh-SE-NCSU/ProjectScraping
 3. CSC510/SQLvsNOSQL
 
+## Collection:
+Data collection was done by using custom ruby scripts. We used Octokit, a ruby client for accessing the Github API. Octokit wraps the Github API in a flat API client that follows ruby conventions. 
+
+Repository name and Project Number(defined by us) are taken as arguments. Repository name is used to query the respective repository for the required features(attributes) using the methods provided by Octokit. Project Number is used to anonymize the csv file storing the extracted data.
+
+### Commit Data Collection:
+Commit data was extracted using the following Github API link:
+https://api.github.com/repos/org_name/repo_name/commits (Octokit’s commit method internally utilises it),  The Octokit’s method extracts the commit data from the above mentioned Github API link and returns a list. This list consists of commit features such as the commit author, commit date etc., and are extracted by iterating through the list.
+
+### Issue Data Collection:
+Issue event data was extracted using the following Github API link:
+https://api.github.com/repos/org_name/repo_name/issues/events (Octokit’s repository_issue_events() method internally utilises it),  The Octokit’s method extracts the issue data from the above mentioned Github API link and returns a list. This list consists of issue features such as the issue creation date, the corresponding label name etc., were extracted by iterating through the list.
+ 
+### Milestone Data Collection:
+Issue event data was extracted using the following Github API link:
+https://api.github.com/repos/org_name/repo_name/milestones (Octokit’s list_milestones() method internally utilises it),  The Octokit’s method extracts the milestone data from the above mentioned Github API link and returns a list. This list consists of milestone features such as the milestone end date, milestone update date etc., were extracted by iterating through the list.
+
+
+## Anonymization:
+
+
+## Tables:
+In the data collection phase, data of desired features was collected from the Github API and was stored in a CSV file. Then in the data analysis phase, this data was then stored in a hashmap and statistical analysis was performed on this data. Statistical measures like the mean and standard deviation of the data set were extracted. Based on these measures, components showing anomalous behaviour were detected if their values exceeded the mean by more than 2 standard deviations. GNU plots were plotted for this data and bad smells, if any were shown.
+## Data:
+
+No|Feature|Project1(rows)|Project2(rows)|Project3(rows)
+--|:------|:--------:|:----------:|:--------:
+1|Uneven Commit History|121|510|182
+2|Uneven Commits Per Person|117|483|168
+3|Uneven Issues Per Label|201|120|107
+4|Issues Exceeding Milestone Due Date|35|56|64
+5|Unassigned Issues|38|67|80
+6|Lack of Code Review|60|68|93
+
+
+## Data Samples:
+
+**1. Uneven Commit History**
+Sample data table: 
+
+| Commit Sha |date|  
+|----------- |----|
+|0734a1482f009b4c6c8dbe16e34daf3c75567373|2015-04-15 21:40:03 UTC|
+|b71398d37c208a57e006753bcd6fd7ccee89357a|2015-04-15 20:25:37 UTC|
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/uneven_commits/feature_results/project_1_commits.csv)
+* [Project 2](features/uneven_commits/feature_results/project_2_commits.csv)
+* [Project 3](features/uneven_commits/feature_results/project_3_commits.csv)
+
+**2. Uneven Commits Per Person**
+Sample data table: 
+
+| commit sha |timestamp| anonymous username |
+|-------------|----------|----------|
+|0734a1482f009b4c6c8dbe16e34daf3c75567373|2015-04-15 21:40:03 UTC |Person_0|
+|76d102926f51f882aefd8961a058c49538cd817c|2015-04-09 20:38:50 UTC |Person_1|
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/uneven_person_commits/feature_results/project_1_person_commits.csv)
+* [Project 2](features/uneven_person_commits/feature_results/project_2_person_commits.csv)
+* [Project 3](features/uneven_person_commits/feature_results/project_3_person_commits.csv)
+
+**3. Uneven Issues Per Label**
+Sample data table: 
+
+| issue number | event_created_at | action| label_name|
+|------------- |------------------|-------|-----------|
+|59|2015-04-05 19:12:41 UTC|labeled|Merged|
+|13|2015-04-04 18:33:50 UTC|unlabeled|Awaiting Developer's Feedback|
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/uneven_label_issues/feature_results/project_1_issues_labels.csv)
+* [Project 2](features/uneven_label_issues/feature_results/project_2_issues_labels.csv)
+* [Project 3](features/uneven_label_issues/feature_results/project_3_issues_labels.csv)
+
+**4. Issues Exceeding Milestone Due Date**
+
+Sample data table: 
+
+| issue number | closed_at | milestone title| due_on| exceed|
+|------------- |-----------|----------------|-------|-------|
+|59|2015-03-09 19:12:41 UTC|"Milestone 1"|2015-03-05 19:12:41 UTC| yes|
+|13|2015-03-05 18:33:50 UTC|"Milestone 2"|2015-03-01 19:12:41 UTC| no |
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/issues_exceeding_milestone_duedate/feature_results/project_1_issues.csv)
+* [Project 2](features/issues_exceeding_milestone_duedate/feature_results/project_2_issues.csv)
+* [Project 3](features/issues_exceeding_milestone_duedate/feature_results/project_3_issues.csv)
+
+**5. Unassigned Issues (To Contributor)**
+
+Sample data table: 
+
+| issue number | issue title | assignee|
+|------------- |-----------|----------------|
+|59|Create a project report.|9207378|
+|49|Create a project report skeleton.|9207378|
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/unassigned_issues/feature_results/project_1_unassigned_issues.csv)
+* [Project 2](features/unassigned_issues/feature_results/project_2_unassigned_issues.csv)
+* [Project 3](features/unassigned_issues/feature_results/project_3_unassigned_issues.csv)
+
+**6. Lack of Code Review**
+
+Sample data table: 
+
+| api_issue_number | issue/pull request title | user_id| issue or pull_request
+|------------- |-----------|----------------|-----------|
+|59|Create a project report.|9207378|issue|
+|58|Update Report.|9207378|pull_request|
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/code_review/feature_results/project_1_issues.csv)
+* [Project 2](features/code_review/feature_results/project_2_issues.csv)
+* [Project 3](features/code_review/feature_results/project_3_issues.csv)
+  
 ## Features & Bad smells(Extractor & Results) 
 
 **1. Uneven Commit History**
