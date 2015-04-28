@@ -408,7 +408,7 @@
 
 - __Feature Detection__
     
-    Our aim in this feature extractor is to find unevenness in the time spent on each label. We need to find the label under which developer has spent a lot or barely spent any time. If the label is used for a longer duration, it could mean that it can be broken down into sub-labels. If the time spent on a label is very low, it may mean it could be combined with other labels or it may be redundant. The code for data collection can be found here [scraper.rb](features/issues_without_milestones/scraper.rb)
+    Our aim in this feature extractor is to find unevenness in the time spent on each label. We need to find the label under which developer has spent a lot or barely spent any time. If the label is used for a longer duration, it could mean that it can be broken down into sub-labels. If the time spent on a label is very low, it may mean it could be combined with other labels or it may be redundant. The code for data collection can be found here [scraper.rb](features/time_label/scraper.rb)
 
 - __Feature detection results__
     
@@ -423,14 +423,14 @@
 
     The links to the entire data set for this extractor can be found here
     * [Project 1](features/time_label/feature_results/project_1_issues.csv)
-    * [Project 2](features/issues_without_milestones/feature_results/project_2_issues.csv)
-    * [Project 3](features/issues_without_milestones/feature_results/project_3_issues.csv)
+    * [Project 2](features/time_label/feature_results/project_2_issues.csv)
+    * [Project 3](features/time_label/feature_results/project_3_issues.csv)
 
 
 - __Bad smells detector__
     
     The criteria used for indentifying labels under which a lot of time spent is by finding the mean time spent on each label and finding the labels two standard deviations beyond this mean time. We have marked such labels as 'Heavy Labels'.
-    The bad smell detector can be found here [smell.rb](./features/issues_without_milestones /smell.rb).
+    The bad smell detector can be found here [smell.rb](./features/time_label/smell.rb).
    <br>*Criteria:*
 
         time_spent_under_label > mean (time_spent_under_label) +/- 2 * standard_deviation 
@@ -450,3 +450,50 @@
     *Project 3*
     **Average Time spent under label:** 16 out of 93<br>
     **Heavy Labels:** 17% __Bad Smell__
+
+**9. Issues Without Description**
+
+- __Feature Detection__
+    
+    In this feature detection we want to find set of issues that have no description at all. It is generally presumed by developers that issue title is enough to explain it. However, it can appear to be ambiguous to other developers. Thus it is necessary to have some decription of the issue. The code for data collection can be found here [scraper.rb](features/issues_without_description/scraper.rb)
+
+- __Feature detection results__
+    
+    Above feature was created by fetching issues 'number', and its 'description'. If the label doesnot have a description, it's description value would be 'null'. We have used [issues](https://developer.github.com/v3/issues) API endpoint to gather this data.
+
+    Sample data table: 
+
+    | issues number | description|
+    |-------------- |------------|
+    |14|"In this issue we aim to create..."|
+    |18|"To implement a feature that can..."|
+
+    The links to the entire data set for this extractor can be found here
+    * [Project 1](features/issues_without_description/feature_results/project_1_issues.csv)
+    * [Project 2](features/issues_without_description/feature_results/project_2_issues.csv)
+    * [Project 3](features/issues_without_description/feature_results/project_3_issues.csv)
+
+
+- __Bad smells detector__
+    
+    A project would qualify for this kind of bad smell only if it has more than 30% of the issues with no descriptions at all. We have marked such issues as 'No Description Issues'.
+    The bad smell detector can be found here [smell.rb](./features/issues_without_description/smell.rb).
+   <br>*Criteria:*
+
+        30% > number of (No Description Issues) / Total number of Issues * 100 
+      
+- __Bad smells results__
+    
+    The results are as follows:
+    
+    *Project 1*
+    **Number of No Description Issues:** 3 out of 60<br>
+    **No Description Issues:** Not a bad smell
+
+    *Project 2*
+    **Number of No Description Issues:** 11 out of 68<br>
+    **No Description Issues:** 16% __Bad Smell__
+
+    *Project 3*
+    **Number of No Description Issues:** 16 out of 93<br>
+    **No Description Issues:** 17% __Bad Smell__
