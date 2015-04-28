@@ -1,32 +1,9 @@
 require 'csv'
 require 'awesome_print'
-require "gnuplot"
-require 'descriptive_statistics'
 
-#def draw_plot(xs, ys, title)
-#  Gnuplot.open do |gp|
-#    Gnuplot::Plot.new(gp) do |plot|
-#      plot.style  "data histograms"
-#      plot.xtics  "nomirror rotate by -45"
-#      plot.title title.capitalize
-#      plot.terminal 'png'
-#      plot.output "smell_results/#{title.gsub(/\s+/, "_").downcase}.png"
-#      plot.style "fill solid 0.5 border"
-#      plot.xlabel "Milestone Number"
-#      plot.ylabel "Issues exceeding milestone due date"
-#      
-#      plot.data << Gnuplot::DataSet.new([xs,ys]) do |ds|
-#        ds.using = "2:xtic(1)"
-#        ds.notitle
-#      end
-#    end
-#  end
-#end
 project_no = ARGV[0]
 
-issues = CSV.open("./feature_results/project_#{project_no}_issues.csv",'r').to_a
-
-ap issues
+issues = CSV.open("./smoke_scrap_data/project_#{project_no}_issues.csv",'r').to_a
 
 m_array = []
 issues.each do |issue|

@@ -22,7 +22,7 @@ end
 issues_minus_pr.sort_by! {|obj| obj.closed_at}
 
 
-CSV.open("./feature_results/project_#{project_no}_issues.csv",'wb') do |csv|
+CSV.open("./smoke_scrap_data/project_#{project_no}_issues.csv",'wb') do |csv|
   issues_minus_pr.each do |issue|
       status = ""
       if issue.milestone != nil
