@@ -392,13 +392,61 @@
     The results are as follows:
     
     *Project 1*
-    **Pull Request Vs Issue Count:** 3 out of 60<br>
+    **Issues without Milestone:** 3 out of 60<br>
     **Dangling Project Issues:** Not a bad smell
 
     *Project 2*
-    **Unassigned Issues:** 11 out of 68<br>
+    **Issues without Milestone:** 11 out of 68<br>
     **Dangling Project Issues:** 16% __Bad Smell__
 
     *Project 3*
-    **Unassigned Issues:** 16 out of 93<br>
+    **Issues without Milestone:** 16 out of 93<br>
     **Dangling Project Issues:** 17% __Bad Smell__
+
+
+**8. Uneven Label Time Distribution**
+
+- __Feature Detection__
+    
+    Our aim in this feature extractor is to find unevenness in the time spent on each label. We need to find the label under which developer has spent a lot or barely spent any time. If the label is used for a longer duration, it could mean that it can be broken down into sub-labels. If the time spent on a label is very low, it may mean it could be combined with other labels or it may be redundant. The code for data collection can be found here [scraper.rb](features/issues_without_milestones/scraper.rb)
+
+- __Feature detection results__
+    
+    Above feature was created by fetching issues/events 'number', 'label', 'unlabeled' timestamp for all its label, 'action' and label 'name' attributes. If the label has not been 'unlabeled' from an issue we consider the issue's 'closed' timestamp as the stop time for the label. We have used [events](https://developer.github.com/v3/issues/events) API endpoint to gather this data.
+
+    Sample data table: 
+
+    | issues/events number | action timestamp| action | label name |
+    |--------------------- |-----------------|--------|------------|
+    |14|2015-03-01 19:12:41 UTC|labeled| "Bug Fix"
+    |18|2015-03-05 18:33:50 UTC|unlabeled| "Awaiting Developer's Feedback"
+
+    The links to the entire data set for this extractor can be found here
+    * [Project 1](features/time_label/feature_results/project_1_issues.csv)
+    * [Project 2](features/issues_without_milestones/feature_results/project_2_issues.csv)
+    * [Project 3](features/issues_without_milestones/feature_results/project_3_issues.csv)
+
+
+- __Bad smells detector__
+    
+    The criteria used for indentifying labels under which a lot of time spent is by finding the mean time spent on each label and finding the labels two standard deviations beyond this mean time. We have marked such labels as 'Heavy Labels'.
+    The bad smell detector can be found here [smell.rb](./features/issues_without_milestones /smell.rb).
+   <br>*Criteria:*
+
+        time_spent_under_label > mean (time_spent_under_label) +/- 2 * standard_deviation 
+      
+- __Bad smells results__
+    
+    The results are as follows:
+    
+    *Project 1*
+    **Average Time spent under label:** 3 out of 60<br>
+    **Heavy Labels:** Not a bad smell
+
+    *Project 2*
+    **Average Time spent under label:** 11 out of 68<br>
+    **Heavy Labels:** 16% __Bad Smell__
+
+    *Project 3*
+    **Average Time spent under label:** 16 out of 93<br>
+    **Heavy Labels:** 17% __Bad Smell__
