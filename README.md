@@ -485,15 +485,15 @@
     The results are as follows:
     
     *Project 1*
-    ![](./features/milestones_without_issues/smell_results/project_1_issues_per_milestone.png)
+    ![](./features/milestones_without_issues/smell_results/project_1_issues_per_milestone.png)<br>
     **Empty Milestone:** Not a bad smell
 
     *Project 2*
-    ![](./features/milestones_without_issues/smell_results/project_2_issues_per_milestone.png)
+    ![](./features/milestones_without_issues/smell_results/project_2_issues_per_milestone.png)<br>
     **Empty Milestone:** Not a bad smell
 
     *Project 3*
-    ![](./features/milestones_without_issues/smell_results/project_2_issues_per_milestone.png)
+    ![](./features/milestones_without_issues/smell_results/project_2_issues_per_milestone.png)<br>
     **Empty Milestone:** Not a bad smell
 
 **10. Issues Without Description**
