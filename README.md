@@ -26,16 +26,17 @@ https://api.github.com/repos/org_name/repo_name/milestones (Octokit’s list_mil
 
 ## Tables:
 In the data collection phase, data of desired features was collected from the Github API and was stored in a CSV file. Then in the data analysis phase, this data was then stored in a hashmap and statistical analysis was performed on this data. Statistical measures like the mean and standard deviation of the data set were extracted. Based on these measures, components showing anomalous behaviour were detected if their values exceeded the mean by more than 2 standard deviations. GNU plots were plotted for this data and bad smells, if any were shown.
+
 ## Data:
 
-No|Feature|Project1(rows)|Project2(rows)|Project3(rows)
---|:------|:--------:|:----------:|:--------:
-1|Uneven Commit History|121|510|182
-2|Uneven Commits Per Person|117|483|168
-3|Uneven Issues Per Label|201|120|107
-4|Issues Exceeding Milestone Due Date|35|56|64
-5|Unassigned Issues|38|67|80
-6|Lack of Code Review|60|68|93
+|No|Feature|Project1(rows)|Project2(rows)|Project3(rows)|
+|--|:------|:--------:|:----------:|:--------:|
+|1|Uneven Commit History|121|510|182|
+|2|Uneven Commits Per Person|117|483|168|
+|3|Uneven Issues Per Label|201|120|107|
+|4|Issues Exceeding Milestone Due Date|35|56|64|
+|5|Unassigned Issues|38|67|80|
+|6|Lack of Code Review|60|68|93|
 
 
 ## Data Samples:
@@ -120,6 +121,7 @@ The links to the entire data set for this extractor can be found here
 * [Project 1](features/code_review/feature_results/project_1_issues.csv)
 * [Project 2](features/code_review/feature_results/project_2_issues.csv)
 * [Project 3](features/code_review/feature_results/project_3_issues.csv)
+  
   
 ## Features & Bad smells(Extractor & Results) 
 
