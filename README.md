@@ -13,7 +13,7 @@
 
 - __Feature detection results__
     
-    Inorder to create the above feature we need the commit 'sha' and the 'timestamp' attributes. We have used [commits](https://developer.github.com/v3/repos/commits/) API endpoint to gather this data.
+    Inorder to create the above feature we need the 'commit sha' and the 'timestamp' attributes. We have used [commits](https://developer.github.com/v3/repos/commits/) API endpoint to gather this data.
 
     Sample data table: 
 
@@ -475,7 +475,7 @@
 
 - __Bad smells detector__
     
-    A milestone should be associated  with a list of issues, which should be completed in order to consider the milestone complete and move to the next milestone. If a milestone has no issues, it does not help us detect the project progress and there is no reason for its creation. If a project contains such milestones without any issues, we have identifies it as a bad smell. The bad smell detector can be found here [smell.rb](./features/milestones_without_issues/smell.rb).
+    A milestone should be associated  with a list of issues, which should be completed in order to consider the milestone complete and move to the next milestone. If a milestone has no issues, it does not help us detect the project progress and there is no reason for its creation. We have identified such milestones as 'Empty Milestone'. The bad smell detector can be found here [smell.rb](./features/milestones_without_issues/smell.rb).
    <br>*Criteria:*
 
         number of milestones with total_issues > 0
@@ -486,15 +486,15 @@
     
     *Project 1*
     ![](./features/milestones_without_issues/smell_results/project_1_issues_per_milestone.png)
-    **Redflagged Milestone:** Not a bad smell
+    **Empty Milestone:** Not a bad smell
 
     *Project 2*
     ![](./features/milestones_without_issues/smell_results/project_2_issues_per_milestone.png)
-    **Redflagged Milestone:** Not a bad smell
+    **Empty Milestone:** Not a bad smell
 
     *Project 3*
     ![](./features/milestones_without_issues/smell_results/project_2_issues_per_milestone.png)
-    **Redflagged Milestone:** Not a bad smell
+    **Empty Milestone:** Not a bad smell
 
 **10. Issues Without Description**
 
