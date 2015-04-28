@@ -402,3 +402,50 @@
     *Project 3*
     **Unassigned Issues:** 16 out of 93<br>
     **Dangling Project Issues:** 17% __Bad Smell__
+
+
+**9. Milestones Without Issues**
+
+- __Feature Detection__
+    
+    Our aim in this feature extractor is to find the milestones that did not contain any issues. This reflects that the milestone was created although there were no issues related to that milestone. The code for data collection can be found here [scraper.rb](features/milestones_without_issues/scraper.rb)
+
+- __Feature detection results__
+    
+    Above feature was created by fetching milestone_number and corresponding total_issues(in the milestone) attributes. We have used [milestones](https://developer.github.com/v3/issues/milestones/) API endpoint to gather this data.
+
+    Sample data table: 
+
+    | milestone_number | total_issues |
+    |------------- |-----------|
+    |2|13|
+    |5|6|
+
+    The links to the entire data set for this extractor can be found here
+    * [Project 1](features/milestones_without_issues/feature_results/project_1_milestones.csv)
+    * [Project 2](features/milestones_without_issues/feature_results/project_2_milestones.csv)
+    * [Project 3](features/milestones_without_issues/feature_results/project_3_milestones.csv)
+
+
+- __Bad smells detector__
+    
+    A milestone should be associated  with a list of issues, which should be completed in order to consider the milestone complete and move to the next milestone. If a milestone has no issues, it does not help us detect the project progress and there is no reason for its creation. If a project contains such milestones without any issues, we have identifies it as a bad smell. The bad smell detector can be found here [smell.rb](./features/milestones_without_issues/smell.rb).
+   <br>*Criteria:*
+
+        number of milestones with total_issues > 0
+      
+- __Bad smells results__
+    
+    The results are as follows:
+    
+    *Project 1*
+    ![](./features/milestones_without_issues/smell_results/project_1_issues_per_milestone.png)
+    **Redflagged Milestone:** Not a bad smell
+
+    *Project 2*
+    ![](./features/milestones_without_issues/smell_results/project_2_issues_per_milestone.png)
+    **Redflagged Milestone:** Not a bad smell
+
+    *Project 3*
+    ![](./features/milestones_without_issues/smell_results/project_3_issues_per_milestone.png)
+    **Redflagged Milestone:** Not a bad smell
