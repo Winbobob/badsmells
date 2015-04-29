@@ -45,6 +45,7 @@ In the data collection phase, data of desired features was collected from the Gi
 ## Data Samples:
 
 **1. Uneven Commit History**
+
 Sample data table: 
 
 | Commit Sha |date|  
@@ -58,6 +59,7 @@ The links to the entire data set for this extractor can be found here
 * [Project 3](features/uneven_commits/feature_results/project_3_commits.csv)
 
 **2. Uneven Commits Per Person**
+
 Sample data table: 
 
 | commit sha |timestamp| anonymous username |
@@ -71,6 +73,7 @@ The links to the entire data set for this extractor can be found here
 * [Project 3](features/uneven_person_commits/feature_results/project_3_person_commits.csv)
 
 **3. Uneven Issues Per Label**
+
 Sample data table: 
 
 | issue number | event_created_at | action| label_name|
@@ -474,15 +477,15 @@ The links to the entire data set for this extractor can be found here
     
     The results are as follows:
     
-    *Project 1*
+    *Project 1*<br>
     **Unassigned Issues:** 7 out of 38<br>
     **Redflagged Project:** Not a bad smell
 
-    *Project 2*
+    *Project 2*<br>
     **Unassigned Issues:** 54 out of 67<br>
     **Redflagged Project:** 80.59% __Bad Smell__
 
-    *Project 3*
+    *Project 3*<br>
     **Unassigned Issues:** 32 out of 80<br>
     **Redflagged Project:** 40% __Bad Smell__
 
@@ -521,15 +524,15 @@ The links to the entire data set for this extractor can be found here
     
     The results are as follows:
     
-    *Project 1*
+    *Project 1*<br>
     **Pull Request Vs Issue Count:** 22 Vs 38<br>
     **Redflagged Reviews:** Not a bad smell
 
-    *Project 2*
+    *Project 2*<br>
     **Unassigned Issues:** 1 Vs 67<br>
     **Redflagged Reviews:** 1.49% __Bad Smell__
 
-    *Project 3*
+    *Project 3*<br>
     **Unassigned Issues:** 13 Vs 80<br>
     **Redflagged reviews:** 16.25% __Bad Smell__
 
@@ -569,15 +572,15 @@ The links to the entire data set for this extractor can be found here
     
     The results are as follows:
     
-    *Project 1*
+    *Project 1*<br>
     **Pull Request Vs Issue Count:** 3 out of 60<br>
     **Dangling Project Issues:** Not a bad smell
 
-    *Project 2*
+    *Project 2*<br>
     **Unassigned Issues:** 11 out of 68<br>
     **Dangling Project Issues:** 16% __Bad Smell__
 
-    *Project 3*
+    *Project 3*<br>
     **Unassigned Issues:** 16 out of 93<br>
     **Dangling Project Issues:** 17% __Bad Smell__
 
@@ -616,15 +619,15 @@ The links to the entire data set for this extractor can be found here
     
     The results are as follows:
     
-    *Project 1*
+    *Project 1*<br>
     **Average Time spent under label:** 3 out of 60<br>
     **Heavy Labels:** Not a bad smell
 
-    *Project 2*
+    *Project 2*<br>
     **Average Time spent under label:** 11 out of 68<br>
     **Heavy Labels:** 16% __Bad Smell__
 
-    *Project 3*
+    *Project 3*<br>
     **Average Time spent under label:** 16 out of 93<br>
     **Heavy Labels:** 17% __Bad Smell__
 
@@ -662,15 +665,15 @@ The links to the entire data set for this extractor can be found here
     
     The results are as follows:
     
-    *Project 1*
+    *Project 1*<br>
     ![](./features/milestones_without_issues/smell_results/project_1_issues_per_milestone.png)<br>
     **Empty Milestone:** Not a bad smell
 
-    *Project 2*
+    *Project 2*<br>
     ![](./features/milestones_without_issues/smell_results/project_2_issues_per_milestone.png)<br>
     **Empty Milestone:** Not a bad smell
 
-    *Project 3*
+    *Project 3*<br>
     ![](./features/milestones_without_issues/smell_results/project_2_issues_per_milestone.png)<br>
     **Empty Milestone:** Not a bad smell
 
@@ -709,14 +712,59 @@ The links to the entire data set for this extractor can be found here
     
     The results are as follows:
     
-    *Project 1*
+    *Project 1*<br>
     **Number of No Description Issues:** 3 out of 60<br>
     **No Description Issues:** Not a bad smell
 
-    *Project 2*
+    *Project 2*<br>
     **Number of No Description Issues:** 11 out of 68<br>
     **No Description Issues:** 16% __Bad Smell__
 
-    *Project 3*
+    *Project 3*<br>
     **Number of No Description Issues:** 16 out of 93<br>
     **No Description Issues:** 17% __Bad Smell__
+
+
+## Early Warnings
+
+- Smoke Detection__
+
+In this smoke extractor we aim to predict the milestones that are very likely to exceed their deadline, a day before the actual deadline. We would anlyse that by comparing the due date for a milestone and the number of open issue a day before the milestone due date. The code for data collection can be found here [scraper.rb](early_smoke/exceeding_milestone_duedate/scraper.rb)
+
+- __Smoke detection results__
+    
+Above smoke was created by fetching 'issue_id', issue 'close_at', it's 'milestone number', 'due_on' and 'issue_status' attributes. We have used [issues](https://developer.github.com/v3/issues/) API endpoint to gather this data.
+
+Sample data table: 
+
+| issue id | closed_at | milestone number| due_on| issue_status|
+|------------- |-----------|----------------|-------|-------|
+|58165726|2015-02-19 17:52:11 UTC|4|2015-02-27 05:00:00 UTC| closed|
+|58167477|2015-02-19 18:32:02 UTC|1|2015-02-18 05:00:00 UTC| open |
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_1_issues.csv)
+* [Project 2](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_2_issues.csv)
+* [Project 3](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_3_issues.csv)
+
+- __Early warning__
+    
+    The percentage of open issues in the milestone a day before the milestone due date is extracted. If this percentage is greater than 50%, then it id highly likely that the milestone deadline will be exceeded. We have marked this smoke as 'Milestone Exceed Warning'.
+   
+    The smoke predictor can be found here [smell.rb](./early_smoke/exceeding_milestone_duedate/smoke.rb).
+   <br>*Criteria:*
+
+        percentage of open issues 1 day prior to milestone deadline > 50%
+
+- __Early warning results__
+    
+    The results are as follows:
+    
+    *Project 1*<br>
+    **Milestone Exceed Warning:** 
+    
+    *Project 2*<br>
+    **Milestone Exceed Warning:** 
+    
+    *Project 3*<br>
+    **Milestone Exceed Warning:** 
