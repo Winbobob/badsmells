@@ -1,8 +1,3 @@
-## Repositories we explored
-1. bighero4/MarkParser
-2. SuperCh-SE-NCSU/ProjectScraping
-3. CSC510/SQLvsNOSQL
-
 ## Collection:
 Data collection was done by using custom ruby scripts. We used Octokit, a ruby client for accessing the Github API. Octokit wraps the Github API in a flat API client that follows ruby conventions. 
 
