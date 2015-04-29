@@ -37,7 +37,10 @@ In the data collection phase, data of desired features was collected from the Gi
 |4|Issues Exceeding Milestone Due Date|35|56|64|
 |5|Unassigned Issues|38|67|80|
 |6|Lack of Code Review|60|68|93|
-
+|7|Issues Without Milestones|38|67|80|
+|8|Uneven Label Time Distribution|-|-|-|
+|9|Milestones Without Issues|5|5|5|
+|10|Issues Without Description|38|67|80|
 
 ## Data Samples:
 
@@ -121,7 +124,62 @@ The links to the entire data set for this extractor can be found here
 * [Project 1](features/code_review/feature_results/project_1_issues.csv)
 * [Project 2](features/code_review/feature_results/project_2_issues.csv)
 * [Project 3](features/code_review/feature_results/project_3_issues.csv)
+
+**7. Issues Without Milestones**
+
+Sample data table: 
+
+| issue_id | milestone_number |has_milestone|
+|------------- |-----------|----------------|
+|66466828|5|no|
+|66351991|3|no|
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/issues_without_milestones/feature_results/project_1_issues.csv)
+* [Project 2](features/issues_without_milestones/feature_results/project_2_issues.csv)
+* [Project 3](features/issues_without_milestones/feature_results/project_3_issues.csv)
+
+**8. Uneven Label Time Distribution**
+
+Sample data table: 
+
+| issues/events number | action timestamp| action | label name |
+|--------------------- |-----------------|--------|------------|
+|14|2015-03-01 19:12:41 UTC|labeled| "Bug Fix"
+|18|2015-03-05 18:33:50 UTC|unlabeled| "Awaiting Developer's Feedback"
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/time_label/feature_results/project_1_issues.csv)
+* [Project 2](features/time_label/feature_results/project_2_issues.csv)
+* [Project 3](features/time_label/feature_results/project_3_issues.csv)
+
+**9. Milestones Without Issues**
+
+Sample data table: 
+
+| milestone_number | total_issues |
+|------------- |-----------|
+|2|13|
+|5|6|
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/milestones_without_issues/feature_results/project_1_milestones.csv)
+* [Project 2](features/milestones_without_issues/feature_results/project_2_milestones.csv)
+* [Project 3](features/milestones_without_issues/feature_results/project_3_milestones.csv)
+
+**10. Issues Without Description**
   
+Sample data table: 
+
+| issues number | description|
+|-------------- |------------|
+|14|"In this issue we aim to create..."|
+|18|"To implement a feature that can..."|
+
+The links to the entire data set for this extractor can be found here
+* [Project 1](features/issues_without_description/feature_results/project_1_issues.csv)
+* [Project 2](features/issues_without_description/feature_results/project_2_issues.csv)
+* [Project 3](features/issues_without_description/feature_results/project_3_issues.csv)
 
 ## Features & Bad smells(Extractor & Results) 
 
