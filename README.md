@@ -799,13 +799,31 @@ The links to the entire data set for this extractor can be found here
     The results are as follows:
     
     *Project 1*<br>
-    **Milestone Exceed Warning:** 
+    Milestone 1 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+
+    Milestone 2 may not complete before it's due date because it has more than 50% issues (81) left open on the last day before its due date. This is an early smoke.
+
+    Milestone 3 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+
+    Milestone 4 may not complete before it's due date because it has more than 50% issues (81) left open on the last day before its due date. This is an early smoke.
+
+    Milestone 5 may not complete before it's due date because it has more than 50% issues (66) left open on the last day before its due date. This is an early smoke
     
     *Project 2*<br>
-    **Milestone Exceed Warning:** 
+    Milestone 2 may not complete before it's due date because it has more than 50% issues (73) left open on the last day before its due date. This is an early smoke.
+
+    Milestone 4 may not complete before it's due date because it has more than 50% issues (57) left open on the last day before its due date. This is an early smoke.
+
+
+    Milestone 5 may not complete before it's due date because it has more than 50% issues (87) left open on the last day before its due date. This is an early smoke. 
     
     *Project 3*<br>
-    **Milestone Exceed Warning:** 
+    Milestone 2 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+
+    Milestone 3 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+
+
+    Milestone 4 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
 
 
 **2. Passenger Warning**
