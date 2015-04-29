@@ -664,7 +664,7 @@ The links to the entire data set for this extractor can be found here
 - __Bad smells results__
     
     The results are as follows:
-    
+        
     *Project 1*<br>
     ![](./features/milestones_without_issues/smell_results/project_1_issues_per_milestone.png)<br>
     **Empty Milestone:** Not a bad smell
@@ -727,34 +727,82 @@ The links to the entire data set for this extractor can be found here
 
 ## Early Warnings
 
-- Smoke Detection__
+**1. Milestone Deadline Exceed Warning**
 
-In this smoke extractor we aim to predict the milestones that are very likely to exceed their deadline, a day before the actual deadline. We would anlyse that by comparing the due date for a milestone and the number of open issue a day before the milestone due date. The code for data collection can be found here [scraper.rb](early_smoke/exceeding_milestone_duedate/scraper.rb)
+- __Smoke Detection__
+
+    In this smoke extractor we aim to predict the milestones that are very likely to exceed their deadline, a day before the actual deadline. We would anlyse that by comparing the due date for a milestone and the number of open issue a day before the milestone due date. The code for data collection can be found here [scraper.rb](early_smoke/exceeding_milestone_duedate/scraper.rb)
 
 - __Smoke detection results__
     
-Above smoke was created by fetching 'issue_id', issue 'close_at', it's 'milestone number', 'due_on' and 'issue_status' attributes. We have used [issues](https://developer.github.com/v3/issues/) API endpoint to gather this data.
+    Above smoke was created by fetching 'issue_id', issue 'close_at', it's 'milestone number', 'due_on' and 'issue_status' attributes. We have used [issues](https://developer.github.com/v3/issues/) API endpoint to gather this data.
 
-Sample data table: 
+    Sample data table: 
 
-| issue id | closed_at | milestone number| due_on| issue_status|
-|------------- |-----------|----------------|-------|-------|
-|58165726|2015-02-19 17:52:11 UTC|4|2015-02-27 05:00:00 UTC| closed|
-|58167477|2015-02-19 18:32:02 UTC|1|2015-02-18 05:00:00 UTC| open |
+    | issue id | closed_at | milestone number| due_on| issue_status|
+    |------------- |-----------|----------------|-------|-------|
+    |58165726|2015-02-19 17:52:11 UTC|4|2015-02-27 05:00:00 UTC| closed|
+    |58167477|2015-02-19 18:32:02 UTC|1|2015-02-18 05:00:00 UTC| open |
 
-The links to the entire data set for this extractor can be found here
-* [Project 1](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_1_issues.csv)
-* [Project 2](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_2_issues.csv)
-* [Project 3](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_3_issues.csv)
+    The links to the entire data set for this extractor can be found here
+    * [Project 1](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_1_issues.csv)
+    * [Project 2](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_2_issues.csv)
+    * [Project 3](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_3_issues.csv)
 
 - __Early warning__
     
     The percentage of open issues in the milestone a day before the milestone due date is extracted. If this percentage is greater than 50%, then it id highly likely that the milestone deadline will be exceeded. We have marked this smoke as 'Milestone Exceed Warning'.
    
     The smoke predictor can be found here [smell.rb](./early_smoke/exceeding_milestone_duedate/smoke.rb).
-   <br>*Criteria:*
+    <br>*Criteria:*
 
-        percentage of open issues 1 day prior to milestone deadline > 50%
+        Percentage of open issues 1 day prior to milestone deadline > 50%
+
+- __Early warning results__
+    
+    The results are as follows:
+    
+    *Project 1*<br>
+    **Milestone Exceed Warning:** 
+    
+    *Project 2*<br>
+    **Milestone Exceed Warning:** 
+    
+    *Project 3*<br>
+    **Milestone Exceed Warning:** 
+
+
+**2. Passenger Warning**
+
+- __Smoke Detection__
+    
+    In this smoke extractor we aim to predict the members that are very likely to be passenegers by the end of the project. We would anlyse that by extracting the commit patterns of the project at various stages of the project. The code for data collection can be found here [scraper.rb](early_smoke/passenger_warning/scraper.rb)
+
+- __Smoke detection results__
+    
+    Above smoke was created by fetching every constributor's 'name' and 'commit sha'. We would then calculate the number of commits performed by a contributor. We have used [commits](https://developer.github.com/v3/repos/commits/) API endpoint to gather this data.
+
+    Sample data table: 
+
+    | commit sha |timestamp| anonymous username |
+    |-------------|----------|----------|
+    |0734a1482f009b4c6c8dbe16e34daf3c75567373|2015-04-15 21:40:03 UTC |Person_0|
+    |76d102926f51f882aefd8961a058c49538cd817c|2015-04-09 20:38:50 UTC |Person_1|
+
+    The links to the entire data set for this extractor can be found here
+
+    * [Project 1](early_smoke/passenger_warning/smoke_scrap_data/project_1_issues.csv)
+    * [Project 2](early_smoke/passenger_warning/smoke_scrap_data/project_2_issues.csv)
+    * [Project 3](early_smoke/passenger_warning/smoke_scrap_data/project_3_issues.csv)
+
+- __Early warning__
+    
+    We are analysing the commiter's email id as the primary key to identify the contributed, thus there can also be a false alarm if a contributer uses two different email ids. If a contributor has number of commits less than 10% is identified as passenger. We identify such passengers at various project completion stages like 25%, 50% and 75%. If a contributor is consistently identified as passenger at all these stages, then it is an highly likely that the contributor would remain  a passneger for the reminder of the project. We have marked this smoke as 'Passenger Warning'.
+
+    The bad smell detector can be found here [smell.rb](./early_smoke/passenger_warning/smoke.rb).
+    <br>*Criteria:*
+
+        commits_per_person < 10% (at 25%, 50% and 75% project completion stage)
 
 - __Early warning results__
     
