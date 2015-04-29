@@ -199,32 +199,31 @@ The links to the entire data set for this extractor can be found here
 
 **1. Milestone Deadline Exceed Warning**
 
-    Sample data table: 
+Sample data table: 
 
-    | issue id | closed_at | milestone number| due_on| issue_status|
-    |------------- |-----------|----------------|-------|-------|
-    |58165726|2015-02-19 17:52:11 UTC|4|2015-02-27 05:00:00 UTC| closed|
-    |58167477|2015-02-19 18:32:02 UTC|1|2015-02-18 05:00:00 UTC| open |
+| issue id | closed_at | milestone number| due_on| issue_status|
+|------------- |-----------|----------------|-------|-------|
+|58165726|2015-02-19 17:52:11 UTC|4|2015-02-27 05:00:00 UTC| closed|
+|58167477|2015-02-19 18:32:02 UTC|1|2015-02-18 05:00:00 UTC| open |
 
-    The links to the entire data set for this extractor can be found here
-    * [Project 1](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_1_issues.csv)
-    * [Project 2](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_2_issues.csv)
-    * [Project 3](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_3_issues.csv)
+The links to the entire data set for this extractor can be found here
+* [Project 1](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_1_issues.csv)
+* [Project 2](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_2_issues.csv)
+* [Project 3](early_smoke/exceeding_milestone_duedate/smoke_scrap_data/project_3_issues.csv)
 
 **2. Passenger Warning**
 
-    Sample data table: 
+Sample data table: 
 
-    | commit sha |timestamp| anonymous username |
-    |-------------|----------|----------|
-    |0734a1482f009b4c6c8dbe16e34daf3c75567373|2015-04-15 21:40:03 UTC |Person_0|
-    |76d102926f51f882aefd8961a058c49538cd817c|2015-04-09 20:38:50 UTC |Person_1|
+| commit sha |timestamp| anonymous username |
+|-------------|----------|----------|
+|0734a1482f009b4c6c8dbe16e34daf3c75567373|2015-04-15 21:40:03 UTC |Person_0|
+|76d102926f51f882aefd8961a058c49538cd817c|2015-04-09 20:38:50 UTC |Person_1|
 
-    The links to the entire data set for this extractor can be found here
-
-    * [Project 1](early_smoke/passenger_warning/smoke_scrap_data/project_1_issues.csv)
-    * [Project 2](early_smoke/passenger_warning/smoke_scrap_data/project_2_issues.csv)
-    * [Project 3](early_smoke/passenger_warning/smoke_scrap_data/project_3_issues.csv)
+The links to the entire data set for this extractor can be found here
+* [Project 1](early_smoke/passenger_warning/smoke_scrap_data/project_1_issues.csv)
+* [Project 2](early_smoke/passenger_warning/smoke_scrap_data/project_2_issues.csv)
+* [Project 3](early_smoke/passenger_warning/smoke_scrap_data/project_3_issues.csv)
 
 ## Features & Bad smells(Extractor & Results) 
 
