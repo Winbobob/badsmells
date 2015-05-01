@@ -59,7 +59,7 @@ final_count['labels'].each do |k,v|
   end
 end
 ap count
-draw_plot((1..count.keys.count).to_a, count.values, "Label Vs Time")
+draw_plot((1..count.keys.count).to_a, count.values, "Project #{project_no} Label Vs Time")
 
 sd = count.values.standard_deviation
 mean = count.values.mean
