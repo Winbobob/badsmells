@@ -14,8 +14,8 @@ def draw_plot(xs, ys, title)
       plot.output "smell_results/#{title.gsub(/\s+/, "_").downcase}.png"
       plot.style "fill solid 0.5 border"
       plot.xlabel "Label"
-      plot.ylabel "Issue count"
-      
+      plot.ylabel "Time"
+
       plot.data << Gnuplot::DataSet.new([xs,ys]) do |ds|
         ds.using = "2:xtic(1)"
         ds.notitle
@@ -41,28 +41,38 @@ events.each do |e|
   end
   if action == 'closed'
     final_count["closed_date"] ||= {}
-    final_count["closed_date"][issue_number] = e[1] 
+    final_count["closed_date"][issue_number] = e[1]
   end
 end
 
 
 final_count['labels'].each do |k,v|
   if v.count.odd?
-    final_count['labels'][k] << final_count['closed_date'][k.split('$$_$$')[0]]  
+    final_count['labels'][k] << final_count['closed_date'][k.split('$$_$$')[0]]
   end
-end 
+end
 
 count = Hash.new { |hash, key| hash[key] = 0 }
-ap final_count
 final_count['labels'].each do |k,v|
-  p v
   v.each do |s,e|
-  p s
-  count[k.split('$$_$$').last] +=  (e.to_i - s.to_i)
+    count[k.split('$$_$$').last] +=  (s.to_i - e.to_i).to_f/(60*60)
+  end
 end
-end
-
 ap count
+draw_plot((1..count.keys.count).to_a, count.values, "Label Vs Time")
+
+sd = count.values.standard_deviation
+mean = count.values.mean
+up_range = mean + 2*sd
+lower_range = mean - 2*sd
+puts "sd: #{sd}"
+puts "mean: #{mean}"
+
+count.each do |k,v|
+  if !v.between?(lower_range, up_range) 
+    puts "Redflagged labeled: #{k} with #{v} issues"
+  end
+end
 
 
 

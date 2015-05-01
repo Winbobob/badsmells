@@ -24,3 +24,16 @@ Total No of Issues:80
 Total No of pull_requests:13
 Percentage:16.25
 RedFlagged project
+
+ruby smell.rb 1
+sd: 12741368073.902
+mean: 16343093972.863636
+
+2
+sd: 7514284.607631564
+mean: 9030147.36511111
+Redflagged labeled: "Solved" with 26135247.674444444 issues
+
+3
+sd: 9147028.08126827
+mean: 11436026.737857142
