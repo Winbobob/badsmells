@@ -1,0 +1,396 @@
+1,1423601865,labeled,Research
+2,1423601966,labeled,Research
+1,1423602729,labeled,Ruby
+2,1423602739,labeled,clojure
+3,1423602825,labeled,Ruby
+3,1423602825,labeled,clojure
+3,1423607411,labeled,prototype
+4,1424318968,labeled,Research
+5,1424319015,labeled,Research
+6,1424319055,labeled,question
+6,1424319055,labeled,Prototype
+6,1424319055,labeled,Ruby
+7,1424319076,labeled,question
+7,1424319076,labeled,Prototype
+7,1424319076,labeled,Clojure
+8,1424319155,labeled,Research
+8,1424319155,labeled,Group Work
+9,1424319265,labeled,Prototype
+9,1424319265,labeled,Ruby
+10,1424321207,labeled,Group Work
+10,1424321207,labeled,Process
+10,1424321207,labeled,Milestone
+11,1424321274,labeled,Group Work
+11,1424321274,labeled,Milestone
+3,1424321311,assigned,""
+3,1424321337,unassigned,""
+3,1424321337,assigned,""
+3,1424321353,unassigned,""
+3,1424321353,assigned,""
+9,1424321353,assigned,""
+9,1424321368,unassigned,""
+9,1424321368,assigned,""
+8,1424321439,assigned,""
+6,1424321457,assigned,""
+7,1424321471,assigned,""
+5,1424321489,assigned,""
+10,1424321603,milestoned,""
+10,1424321603,milestoned,""
+10,1424321623,unlabeled,Milestone
+11,1424321623,unlabeled,Milestone
+11,1424321675,milestoned,""
+11,1424321675,milestoned,""
+1,1424321836,milestoned,""
+1,1424321836,milestoned,""
+2,1424321836,milestoned,""
+2,1424321836,milestoned,""
+3,1424321836,milestoned,""
+3,1424321836,milestoned,""
+9,1424321836,milestoned,""
+9,1424321836,milestoned,""
+12,1424322061,labeled,Ruby
+12,1424322061,labeled,Clojure
+12,1424322115,milestoned,""
+12,1424322115,milestoned,""
+13,1424322285,labeled,Tests
+13,1424322421,milestoned,""
+13,1424322421,milestoned,""
+4,1424322548,milestoned,""
+4,1424322548,milestoned,""
+5,1424322548,milestoned,""
+5,1424322548,milestoned,""
+6,1424322548,milestoned,""
+6,1424322548,milestoned,""
+7,1424322548,milestoned,""
+7,1424322548,milestoned,""
+8,1424322548,milestoned,""
+8,1424322548,milestoned,""
+10,1424322719,renamed,""
+11,1424322759,renamed,""
+14,1424322840,labeled,Tests
+14,1424322864,milestoned,""
+14,1424322864,milestoned,""
+15,1424323065,labeled,Results
+15,1424323065,milestoned,""
+15,1424323091,renamed,""
+3,1424323757,unlabeled,Ruby
+3,1424323766,renamed,""
+16,1424323975,labeled,Results
+16,1424323975,milestoned,""
+4,1424324010,assigned,""
+17,1424324325,labeled,Research
+17,1424324325,milestoned,""
+18,1424324524,labeled,Ruby
+18,1424324524,labeled,Clojure
+19,1424324582,labeled,Tests
+19,1424324582,milestoned,""
+18,1424324595,milestoned,""
+18,1424324595,milestoned,""
+20,1424324627,labeled,Research
+20,1424324627,milestoned,""
+19,1424324646,renamed,""
+18,1424324662,renamed,""
+16,1424324679,labeled,Research
+20,1424324690,labeled,Results
+15,1424324709,labeled,Research
+21,1424324768,labeled,Research
+21,1424324768,labeled,Results
+21,1424324808,milestoned,""
+21,1424324808,milestoned,""
+5,1424368280,closed,""
+4,1424368331,closed,""
+10,1424370722,closed,""
+17,1424372654,assigned,""
+15,1424372721,labeled,Group Work
+9,1424372762,unassigned,""
+9,1424372762,assigned,""
+17,1424383544,unassigned,""
+17,1424383544,assigned,""
+17,1424383633,mentioned,""
+17,1424383633,subscribed,""
+23,1424383828,mentioned,""
+23,1424383828,subscribed,""
+23,1424383828,mentioned,""
+23,1424383828,subscribed,""
+23,1424383831,assigned,""
+7,1424384275,renamed,""
+23,1424384883,labeled,Research
+8,1424569479,unassigned,""
+8,1424569479,assigned,""
+7,1424569635,unassigned,""
+7,1424569635,assigned,""
+6,1424569681,unassigned,""
+6,1424569681,assigned,""
+2,1425262117,renamed,""
+3,1425262171,renamed,""
+2,1425262548,labeled,Javascript
+2,1425262549,unlabeled,Clojure
+3,1425262580,labeled,Javascript
+3,1425262580,unlabeled,Clojure
+7,1425263222,renamed,""
+7,1425263228,labeled,Javascript
+7,1425263228,unlabeled,Clojure
+12,1425263286,labeled,Javascript
+12,1425263286,unlabeled,Clojure
+18,1425263323,labeled,Javascript
+18,1425263323,unlabeled,Clojure
+11,1425263369,renamed,""
+17,1425263552,closed,""
+12,1425263660,renamed,""
+12,1425263665,unlabeled,Javascript
+25,1425263727,labeled,Javascript
+25,1425263727,milestoned,""
+3,1425264030,labeled,Code
+9,1425264056,labeled,Code
+12,1425264080,labeled,Code
+18,1425264120,renamed,""
+18,1425264125,labeled,Code
+18,1425264125,unlabeled,Javascript
+26,1425264145,labeled,Javascript
+26,1425264145,labeled,Code
+26,1425264145,milestoned,""
+11,1425264169,labeled,Code Review
+25,1425264263,labeled,Code
+26,1425264372,renamed,""
+23,1425264423,subscribed,""
+23,1425264423,subscribed,""
+23,1425264423,subscribed,""
+23,1425264423,subscribed,""
+3,1425283896,unassigned,""
+3,1425283896,assigned,""
+28,1425327350,milestoned,""
+28,1425327371,labeled,Group Work
+28,1425327371,labeled,Tests
+1,1425327403,demilestoned,""
+1,1425327403,milestoned,""
+1,1425327403,milestoned,""
+1,1425327403,demilestoned,""
+2,1425327403,demilestoned,""
+2,1425327403,milestoned,""
+2,1425327403,milestoned,""
+2,1425327403,demilestoned,""
+1,1425328824,assigned,""
+1,1425328850,closed,""
+2,1425328868,assigned,""
+2,1425328887,closed,""
+29,1425329975,labeled,Prototype
+29,1425329975,labeled,Javascript
+29,1425329975,labeled,Code
+29,1425329975,assigned,""
+29,1425329975,milestoned,""
+30,1425330033,labeled,Prototype
+30,1425330033,labeled,Ruby
+30,1425330033,labeled,Code
+30,1425330033,assigned,""
+30,1425330033,milestoned,""
+29,1425330130,closed,""
+7,1425330267,closed,""
+32,1425402673,labeled,Bug
+32,1425402673,mentioned,""
+32,1425402673,subscribed,""
+32,1425402974,mentioned,""
+32,1425402974,subscribed,""
+8,1425415489,closed,""
+6,1425415921,closed,""
+32,1425419094,milestoned,""
+32,1425419097,closed,""
+30,1425419293,closed,""
+23,1427668951,closed,""
+37,1427778830,labeled,Prototype
+37,1427778830,assigned,""
+37,1427778830,milestoned,""
+3,1427780001,closed,""
+39,1427832016,labeled,Ruby
+39,1427832016,labeled,Code
+39,1427832019,assigned,""
+20,1427832769,closed,""
+39,1427837274,closed,""
+41,1427838891,labeled,Javascript
+41,1427838891,mentioned,""
+41,1427838891,subscribed,""
+41,1427838891,milestoned,""
+41,1427839280,mentioned,""
+41,1427839280,subscribed,""
+9,1427839437,labeled,question
+9,1427839449,mentioned,""
+9,1427839449,subscribed,""
+25,1427840288,labeled,Needs Review
+25,1427840444,mentioned,""
+25,1427840444,subscribed,""
+18,1427853025,labeled,Javascript
+18,1427853025,labeled,Needs Review
+18,1427853025,unlabeled,Ruby
+18,1427853061,labeled,Awaiting Developer's Feedback
+18,1427853061,unlabeled,Needs Review
+18,1427853106,labeled,Ready for Merge
+37,1427853297,labeled,Merged
+37,1427853308,closed,""
+12,1427853524,demilestoned,""
+12,1427853524,milestoned,""
+12,1427853524,milestoned,""
+12,1427853524,demilestoned,""
+25,1427853524,demilestoned,""
+25,1427853524,milestoned,""
+25,1427853524,milestoned,""
+25,1427853524,demilestoned,""
+41,1427853524,demilestoned,""
+41,1427853524,milestoned,""
+41,1427853524,milestoned,""
+41,1427853524,demilestoned,""
+13,1427853546,demilestoned,""
+13,1427853546,milestoned,""
+13,1427853546,milestoned,""
+13,1427853546,demilestoned,""
+28,1427853570,demilestoned,""
+28,1427853570,milestoned,""
+28,1427853570,milestoned,""
+28,1427853570,demilestoned,""
+21,1427853677,demilestoned,""
+21,1427853677,milestoned,""
+21,1427853677,milestoned,""
+21,1427853677,demilestoned,""
+15,1427853697,demilestoned,""
+15,1427853697,milestoned,""
+15,1427853697,milestoned,""
+15,1427853697,demilestoned,""
+16,1427853707,demilestoned,""
+16,1427853707,milestoned,""
+16,1427853707,milestoned,""
+16,1427853707,demilestoned,""
+12,1427853752,assigned,""
+13,1427853767,assigned,""
+14,1427853767,assigned,""
+19,1427853768,assigned,""
+25,1427853792,assigned,""
+26,1427853792,assigned,""
+16,1427853849,labeled,Group Work
+21,1427853871,assigned,""
+28,1427853871,assigned,""
+41,1427853871,assigned,""
+12,1427856748,mentioned,""
+12,1427856748,subscribed,""
+25,1427871599,closed,""
+41,1427917494,labeled,Code
+41,1427917494,labeled,Awaiting Developer's Feedback
+41,1427917544,mentioned,""
+41,1427917544,subscribed,""
+44,1427917688,labeled,Javascript
+44,1427917688,labeled,Code
+44,1427917688,assigned,""
+44,1427917688,milestoned,""
+41,1427919837,mentioned,""
+41,1427919837,subscribed,""
+41,1427926138,labeled,Needs Review
+41,1427926138,unlabeled,Awaiting Developer's Feedback
+26,1427929402,labeled,Needs Review
+41,1427931352,closed,""
+26,1427931451,closed,""
+25,1427931627,labeled,Merged
+25,1427931627,unlabeled,Needs Review
+26,1427931655,labeled,Merged
+26,1427931655,unlabeled,Needs Review
+41,1427931705,labeled,Merged
+41,1427931705,unlabeled,Needs Review
+44,1428000446,labeled,Needs Review
+18,1428009604,unlabeled,Ready for Merge
+18,1428009615,closed,""
+18,1428009660,unlabeled,Awaiting Developer's Feedback
+19,1428009729,demilestoned,""
+19,1428009729,milestoned,""
+19,1428009729,milestoned,""
+19,1428009729,demilestoned,""
+18,1428009768,demilestoned,""
+18,1428009768,milestoned,""
+18,1428009769,milestoned,""
+18,1428009769,demilestoned,""
+26,1428009769,demilestoned,""
+26,1428009769,milestoned,""
+26,1428009769,milestoned,""
+26,1428009769,demilestoned,""
+44,1428012340,labeled,Ready for Merge
+44,1428012340,labeled,Awaiting Developer's Feedback
+44,1428012340,unlabeled,Needs Review
+11,1428012490,closed,""
+9,1428012651,renamed,""
+9,1428012660,labeled,Needs Review
+48,1428013717,labeled,Javascript
+48,1428013717,assigned,""
+48,1428013717,milestoned,""
+44,1428014726,unlabeled,Awaiting Developer's Feedback
+44,1428014770,closed,""
+44,1428014788,labeled,Merged
+44,1428014797,unlabeled,Ready for Merge
+9,1428015114,labeled,Awaiting Developer's Feedback
+9,1428015114,unlabeled,Needs Review
+9,1428015114,unlabeled,question
+9,1428015124,unlabeled,Awaiting Developer's Feedback
+9,1428015151,closed,""
+49,1428028000,labeled,Research
+49,1428028000,labeled,Needs Review
+49,1428028000,labeled,Report
+49,1428028000,assigned,""
+49,1428028000,milestoned,""
+49,1428028965,labeled,Group Work
+13,1428032721,labeled,Needs Review
+14,1428032735,labeled,Needs Review
+19,1428032769,labeled,Needs Review
+49,1428043896,labeled,Ready for Merge
+49,1428043896,unlabeled,Needs Review
+49,1428043908,closed,""
+49,1428043925,labeled,Merged
+49,1428043934,unlabeled,Ready for Merge
+13,1428074822,labeled,Javascript
+13,1428074822,labeled,Awaiting Developer's Feedback
+13,1428074822,unlabeled,Needs Review
+12,1428075459,renamed,""
+12,1428075466,labeled,Needs Review
+12,1428083853,closed,""
+12,1428083865,labeled,Merged
+12,1428083865,unlabeled,Needs Review
+48,1428084655,labeled,Needs Review
+48,1428084716,labeled,Ready for Merge
+48,1428084724,unlabeled,Needs Review
+48,1428084760,closed,""
+48,1428084785,labeled,Merged
+48,1428084785,unlabeled,Ready for Merge
+13,1428172156,closed,""
+14,1428172156,closed,""
+19,1428172156,closed,""
+54,1428172330,labeled,Group Work
+54,1428172330,labeled,Presentation
+28,1428172334,closed,""
+13,1428172430,labeled,Merged
+13,1428172430,unlabeled,Awaiting Developer's Feedback
+14,1428172441,labeled,Merged
+14,1428172441,unlabeled,Needs Review
+19,1428172448,labeled,Merged
+19,1428172448,unlabeled,Needs Review
+11,1428172598,labeled,Merged
+11,1428172598,unlabeled,Needs Review
+55,1428172919,labeled,Ruby
+55,1428172919,labeled,Tests
+55,1428172919,assigned,""
+55,1428172919,milestoned,""
+56,1428172960,labeled,Ruby
+56,1428172960,labeled,Tests
+56,1428172960,assigned,""
+56,1428172960,milestoned,""
+59,1428257893,labeled,Group Work
+59,1428257893,labeled,Report
+59,1428257944,labeled,Needs Review
+59,1428257956,milestoned,""
+59,1428257961,assigned,""
+59,1428261161,labeled,Merged
+59,1428261161,unlabeled,Needs Review
+59,1428261178,closed,""
+54,1428391514,assigned,""
+54,1428391517,unassigned,""
+54,1428391517,assigned,""
+54,1428391521,unassigned,""
+54,1428391521,assigned,""
+15,1429039721,closed,""
+16,1429039721,closed,""
+21,1429039721,closed,""
+54,1429039936,closed,""
+56,1429041529,closed,""
+55,1429041543,closed,""
