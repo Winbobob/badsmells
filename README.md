@@ -656,20 +656,20 @@ The links to the entire data set for this extractor can be found here
     
     *Project 1*<br>
     ![](./features/time_label/smell_results/project_1_label_vs_time.png)<br>
-    **sd:** 12741368073.902
-    **mean:** 16343093972.863636
+    **sd:** 12741368073.902<br>
+    **mean:** 16343093972.863636<br>
     **Heavy Labels:** Not a bad smell
 
     *Project 2*<br>
     ![](./features/time_label/smell_results/project_2_label_vs_time.png)<br>
-    **sd:** 7514284.607631564
-    **mean:** 9030147.36511111
+    **sd:** 7514284.607631564<br>
+    **mean:** 9030147.36511111<br>
     **Heavy Labels:** "Solved" with 26135247.674444444
 
     *Project 3*<br>
     ![](./features/time_label/smell_results/project_3_label_vs_time.png)<br>
-    **sd:** 9147028.08126827
-    **mean:** 11436026.737857142
+    **sd:** 9147028.08126827<br>
+    **mean:** 11436026.737857142<br>
     **Heavy Labels:** Not a bad smell
 
 **9. Milestones Without Issues**
