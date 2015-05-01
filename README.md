@@ -15,9 +15,8 @@ https://api.github.com/repos/org_name/repo_name/issues/events (Octokit’s repos
 Issue event data was extracted using the following Github API link:
 https://api.github.com/repos/org_name/repo_name/milestones (Octokit’s list_milestones() method internally utilises it),  The Octokit’s method extracts the milestone data from the above mentioned Github API link and returns a list. This list consists of milestone features such as the milestone end date, milestone update date etc., were extracted by iterating through the list.
 
-
-## Anonymization:
-
+## Anonymization
+We have take precaution that no personal data gets added in the data file or the code files. While using the API we have avoided to fetch personal data if we didnt need it.. Many feature extractors didn’t require use of personal information. In code we replaced the personal username with index of array ‘authors’, hence we could replace it liek Person_1, Person_2 and so on. 
 
 ## Tables:
 In the data collection phase, data of desired features was collected from the Github API and was stored in a CSV file. Then in the data analysis phase, this data was then stored in a hashmap and statistical analysis was performed on this data. Statistical measures like the mean and standard deviation of the data set were extracted. Based on these measures, components showing anomalous behaviour were detected if their values exceeded the mean by more than 2 standard deviations. GNU plots were plotted for this data and bad smells, if any were shown.
