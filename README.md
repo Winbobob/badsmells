@@ -151,15 +151,15 @@ The links to the entire data set for this extractor can be found here
 
 Sample data table: 
 
-| issues/events number | action timestamp| action | label name |
+| issues_id | created_at| action | label name |
 |--------------------- |-----------------|--------|------------|
-|14|2015-03-01 19:12:41 UTC|labeled| "Bug Fix"
-|18|2015-03-05 18:33:50 UTC|unlabeled| "Awaiting Developer's Feedback"
+|3|1423602825|labeled| Ruby|
+|2|1423602739|labeled| clojure|
 
 The links to the entire data set for this extractor can be found here
-* [Project 1](features/time_label/feature_results/project_1_issues.csv)
-* [Project 2](features/time_label/feature_results/project_2_issues.csv)
-* [Project 3](features/time_label/feature_results/project_3_issues.csv)
+* [Project 1](features/time_label/feature_results/project_1_time_label.csv)
+* [Project 2](features/time_label/feature_results/project_2_time_label.csv)
+* [Project 3](features/time_label/feature_results/project_3_time_label.csv)
 
 **9. Milestones Without Issues**
 
@@ -631,15 +631,15 @@ The links to the entire data set for this extractor can be found here
 
     Sample data table: 
 
-    | issues/events number | action timestamp| action | label name |
+    | issues_id | created_at| action | label name |
     |--------------------- |-----------------|--------|------------|
-    |14|2015-03-01 19:12:41 UTC|labeled| "Bug Fix"
-    |18|2015-03-05 18:33:50 UTC|unlabeled| "Awaiting Developer's Feedback"
+    |3|1423602825|labeled| Ruby|
+    |2|1423602739|labeled| clojure|
 
     The links to the entire data set for this extractor can be found here
-    * [Project 1](features/time_label/feature_results/project_1_issues.csv)
-    * [Project 2](features/time_label/feature_results/project_2_issues.csv)
-    * [Project 3](features/time_label/feature_results/project_3_issues.csv)
+    * [Project 1](features/time_label/feature_results/project_1_time_label.csv)
+    * [Project 2](features/time_label/feature_results/project_2_time_label.csv)
+    * [Project 3](features/time_label/feature_results/project_3_time_label.csv)
 
 
 - __Bad smells detector__
@@ -655,16 +655,22 @@ The links to the entire data set for this extractor can be found here
     The results are as follows:
     
     *Project 1*<br>
-    **Average Time spent under label:** 3 out of 60<br>
+    ![](./features/time_label/smell_results/project_1_label_vs_time.png)<br>
+    **sd:** 12741368073.902
+    **mean:** 16343093972.863636
     **Heavy Labels:** Not a bad smell
 
     *Project 2*<br>
-    **Average Time spent under label:** 11 out of 68<br>
-    **Heavy Labels:** 16% __Bad Smell__
+    ![](./features/time_label/smell_results/project_2_label_vs_time.png)<br>
+    **sd:** 7514284.607631564
+    **mean:** 9030147.36511111
+    **Heavy Labels:** "Solved" with 26135247.674444444
 
     *Project 3*<br>
-    **Average Time spent under label:** 16 out of 93<br>
-    **Heavy Labels:** 17% __Bad Smell__
+    ![](./features/time_label/smell_results/project_3_label_vs_time.png)<br>
+    **sd:** 9147028.08126827
+    **mean:** 11436026.737857142
+    **Heavy Labels:** Not a bad smell
 
 **9. Milestones Without Issues**
 
