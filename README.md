@@ -1,7 +1,7 @@
 ## Collection:
 Data collection was done by using custom ruby scripts. We used Octokit, a ruby client for accessing the Github API. Octokit wraps the Github API in a flat API client that follows ruby conventions. 
 
-Repository name and Project Number(defined by us) are taken as arguments. Repository name is used to query the respective repository for the required features(attributes) using the methods provided by Octokit. Project Number is used to anonymize the csv file storing the extracted data.
+Repository name and a project number(defined by us) are taken as arguments. Repository name is used to query the respective repository for the required features(attributes) using the methods provided by Octokit. Project Number is used to anonymize the csv file storing the extracted data.
 
 ### Commit Data Collection:
 Commit data was extracted using the following Github API link:
