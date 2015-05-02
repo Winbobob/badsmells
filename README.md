@@ -5,18 +5,18 @@ Repository name and Project Number(defined by us) are taken as arguments. Reposi
 
 ### Commit Data Collection:
 Commit data was extracted using the following Github API link:
-https://api.github.com/repos/org_name/repo_name/commits (Octokit’s commit method internally utilises it),  The Octokit’s method extracts the commit data from the above mentioned Github API link and returns a list. This list consists of commit features such as the commit author, commit date etc., and are extracted by iterating through the list.
+https://api.github.com/repos/org_name/repo_name/commits (Octokit’s commit method internally utilises it),  The Octokit’s method extracts the commit data from the above mentioned Github API link and returns a list. This list consists of commit features such as the commit author, commit date etc., and were extracted by iterating through the list.
 
 ### Issue Data Collection:
 Issue event data was extracted using the following Github API link:
-https://api.github.com/repos/org_name/repo_name/issues/events (Octokit’s repository_issue_events() method internally utilises it),  The Octokit’s method extracts the issue data from the above mentioned Github API link and returns a list. This list consists of issue features such as the issue creation date, the corresponding label name etc., were extracted by iterating through the list.
+https://api.github.com/repos/org_name/repo_name/issues/events (Octokit’s repository_issue_events() method internally utilises it),  The Octokit’s method extracts the issue data from the above mentioned Github API link and returns a list. This list consists of issue features such as the issue creation date, the corresponding label name etc., and were extracted by iterating through the list.
  
 ### Milestone Data Collection:
 Issue event data was extracted using the following Github API link:
-https://api.github.com/repos/org_name/repo_name/milestones (Octokit’s list_milestones() method internally utilises it),  The Octokit’s method extracts the milestone data from the above mentioned Github API link and returns a list. This list consists of milestone features such as the milestone end date, milestone update date etc., were extracted by iterating through the list.
+https://api.github.com/repos/org_name/repo_name/milestones (Octokit’s list_milestones() method internally utilises it),  The Octokit’s method extracts the milestone data from the above mentioned Github API link and returns a list. This list consists of milestone features such as the milestone end date, milestone update date etc., and were extracted by iterating through the list.
 
 ## Anonymization
-We have take precaution that no personal data gets added in the data file or the code files. While using the API we have avoided to fetch personal data if we didnt need it.. Many feature extractors didn’t require use of personal information. In code we replaced the personal username with index of array ‘authors’, hence we could replace it liek Person_1, Person_2 and so on. 
+We have taken precautions so that no personal data gets added in the data file or the code files. While using the API we have avoided to fetch personal data if we didnt need it. Many feature extractors didn’t require use of personal information. In code we replaced the personal username with index of array ‘authors’, hence we could replace it with labels like Person_1, Person_2 and so on. 
 
 ## Tables:
 In the data collection phase, data of desired features was collected from the Github API and was stored in a CSV file. Then in the data analysis phase, this data was then stored in a hashmap and statistical analysis was performed on this data. Statistical measures like the mean and standard deviation of the data set were extracted. Based on these measures, components showing anomalous behaviour were detected if their values exceeded the mean by more than 2 standard deviations. GNU plots were plotted for this data and bad smells, if any were shown.
@@ -34,7 +34,7 @@ In the data collection phase, data of desired features was collected from the Gi
 |5|Unassigned Issues|38|67|80|
 |6|Lack of Code Review|60|68|93|
 |7|Issues Without Milestones|38|67|80|
-|8|Uneven Label Time Distribution|-|-|-|
+|8|Uneven Label Time Distribution|396|427|433|
 |9|Milestones Without Issues|5|5|5|
 |10|Issues Without Description|38|67|80|
 
@@ -95,10 +95,10 @@ The links to the entire data set for this extractor can be found here
 
 Sample data table: 
 
-| issue number | closed_at | milestone title| due_on| exceed|
+| issue id | closed_at | milestone | due_on| exceed|
 |------------- |-----------|----------------|-------|-------|
-|59|2015-03-09 19:12:41 UTC|"Milestone 1"|2015-03-05 19:12:41 UTC| yes|
-|13|2015-03-05 18:33:50 UTC|"Milestone 2"|2015-03-01 19:12:41 UTC| no |
+|66466828|2015-03-09 19:12:41 UTC| 1 |2015-03-05 19:12:41 UTC| yes|
+|66351991|2015-03-05 18:33:50 UTC| 2 |2015-03-01 19:12:41 UTC| no |
 
 The links to the entire data set for this extractor can be found here
 * [Project 1](features/issues_exceeding_milestone_duedate/feature_results/project_1_issues.csv)
@@ -137,7 +137,7 @@ The links to the entire data set for this extractor can be found here
 
 Sample data table: 
 
-| issue_id | milestone_number |has_milestone|
+| issue_id | milestone_number |smell|
 |------------- |-----------|----------------|
 |66466828|5|no|
 |66351991|3|no|
@@ -439,10 +439,10 @@ The links to the entire data set for this extractor can be found here
 
     Sample data table: 
 
-    | issue number | closed_at | milestone title| due_on| exceed|
+    | issue id | closed_at | milestone | due_on| exceed|
     |------------- |-----------|----------------|-------|-------|
-    |59|2015-03-09 19:12:41 UTC|"Milestone 1"|2015-03-05 19:12:41 UTC| yes|
-    |13|2015-03-05 18:33:50 UTC|"Milestone 2"|2015-03-01 19:12:41 UTC| no |
+    |66466828|2015-03-09 19:12:41 UTC| 1 |2015-03-05 19:12:41 UTC| yes|
+    |66351991|2015-03-05 18:33:50 UTC| 2 |2015-03-01 19:12:41 UTC| no |
 
     The links to the entire data set for this extractor can be found here
     * [Project 1](features/issues_exceeding_milestone_duedate/feature_results/project_1_issues.csv)
@@ -584,7 +584,7 @@ The links to the entire data set for this extractor can be found here
 
     Sample data table: 
 
-    | issue_id | milestone_number |has_milestone|
+    | issue_id | milestone_number |smell|
     |------------- |-----------|----------------|
     |66466828|5|no|
     |66351991|3|no|
@@ -598,7 +598,7 @@ The links to the entire data set for this extractor can be found here
 - __Bad smells detector__
     
     The criteria used for indentifying the project's issues as dangling project issues only if the number of dangling issues are greater than 10%. We have marked such projects as 'Dangling Project Issues'.
-    The bad smell detector can be found here [smell.rb](./features/issues_without_milestones /smell.rb).
+    The bad smell detector can be found here [smell.rb](./features/issues_without_milestones/smell.rb).
    <br>*Criteria:*
 
         10%  > number of (dangling_issues)/total number of (issues) * 100
