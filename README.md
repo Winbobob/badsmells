@@ -794,7 +794,7 @@ The links to the entire data set for this extractor can be found here
     
     The percentage of open issues in the milestone a day before the milestone due date is extracted. If this percentage is greater than 50%, then it id highly likely that the milestone deadline will be exceeded. We have marked this smoke as 'Milestone Exceed Warning'.
    
-    The smoke predictor can be found here [smell.rb](./early_smoke/exceeding_milestone_duedate/smoke.rb).
+    The smoke predictor can be found here [smoke.rb](./early_smoke/exceeding_milestone_duedate/smoke.rb).
     <br>*Criteria:*
 
         Percentage of open issues 1 day prior to milestone deadline > 50%
@@ -804,31 +804,31 @@ The links to the entire data set for this extractor can be found here
     The results are as follows:
     
     *Project 1*<br>
-    Milestone 1 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone** 1 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
 
-    Milestone 2 may not complete before it's due date because it has more than 50% issues (81) left open on the last day before its due date. This is an early smoke.
+    **Milestone 2** may not complete before it's due date because it has more than 50% issues (81) left open on the last day before its due date. This is an early smoke.
 
-    Milestone 3 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone 3** may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
 
-    Milestone 4 may not complete before it's due date because it has more than 50% issues (81) left open on the last day before its due date. This is an early smoke.
+    **Milestone 4** may not complete before it's due date because it has more than 50% issues (81) left open on the last day before its due date. This is an early smoke.
 
-    Milestone 5 may not complete before it's due date because it has more than 50% issues (66) left open on the last day before its due date. This is an early smoke
+    **Milestone 5** may not complete before it's due date because it has more than 50% issues (66) left open on the last day before its due date. This is an early smoke
     
     *Project 2*<br>
-    Milestone 2 may not complete before it's due date because it has more than 50% issues (73) left open on the last day before its due date. This is an early smoke.
+    **Milestone 2** may not complete before it's due date because it has more than 50% issues (73) left open on the last day before its due date. This is an early smoke.
 
-    Milestone 4 may not complete before it's due date because it has more than 50% issues (57) left open on the last day before its due date. This is an early smoke.
+    **Milestone 4** may not complete before it's due date because it has more than 50% issues (57) left open on the last day before its due date. This is an early smoke.
 
 
-    Milestone 5 may not complete before it's due date because it has more than 50% issues (87) left open on the last day before its due date. This is an early smoke. 
+    **Milestone 5** may not complete before it's due date because it has more than 50% issues (87) left open on the last day before its due date. This is an early smoke. 
     
     *Project 3*<br>
-    Milestone 2 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone 2** may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
 
-    Milestone 3 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone 3** may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
 
 
-    Milestone 4 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone 4** may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
 
 
 **2. Passenger Warning**
@@ -858,7 +858,7 @@ The links to the entire data set for this extractor can be found here
     
     We are analysing the commiter's email id as the primary key to identify the contributed, thus there can also be a false alarm if a contributer uses two different email ids. If a contributor has number of commits less than 10% is identified as passenger. We identify such passengers at various project completion stages like 25%, 50% and 75%. If a contributor is consistently identified as passenger at all these stages, then it is an highly likely that the contributor would remain  a passneger for the reminder of the project. We have marked this smoke as 'Passenger Warning'.
 
-    The bad smell detector can be found here [smell.rb](./early_smoke/passenger_warning/smoke.rb).
+    The bad smell detector can be found here [smoke.rb](./early_smoke/passenger_warning/smoke.rb).
     <br>*Criteria:*
 
         commits_per_person < 10% (at 25%, 50% and 75% project completion stage)
@@ -868,10 +868,10 @@ The links to the entire data set for this extractor can be found here
     The results are as follows:
     
     *Project 1*<br>
-    **Milestone Exceed Warning:** 
+    **Passenger Warning:** 
     
     *Project 2*<br>
-    **Milestone Exceed Warning:** 
+    **Passenger Warning:** 
     
     *Project 3*<br>
-    **Milestone Exceed Warning:** 
+    **Passenger Warning:** 
