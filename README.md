@@ -808,7 +808,7 @@ The links to the entire data set for this extractor can be found here
     The results are as follows:
     
     *Project 1*<br>
-    **Milestone** 1 may not complete before it's due date because it has more than 50% issues (100) left open on the day before its due date. **This is an early smoke.**
+    **Milestone 1** may not complete before it's due date because it has more than 50% issues (100) left open on the day before its due date. **This is an early smoke.**
 
     **Milestone 2** may not complete before it's due date because it has more than 50% issues (81) left open on the day before its due date. **This is an early smoke.**
 
@@ -817,6 +817,8 @@ The links to the entire data set for this extractor can be found here
     **Milestone 4** may not complete before it's due date because it has more than 50% issues (81) left open on the day before its due date. **This is an early smoke.**
 
     **Milestone 5** may not complete before it's due date because it has more than 50% issues (66) left open on the day before its due date. **This is an early smoke.**
+
+    **5/5** milestones have 'Milestone Exceed Warning'.
     
     *Project 2*<br>
     **Milestone 2** may not complete before it's due date because it has more than 50% issues (73) left open on the day before its due date. **This is an early smoke.**
@@ -826,6 +828,8 @@ The links to the entire data set for this extractor can be found here
 
     **Milestone 5** may not complete before it's due date because it has more than 50% issues (87) left open on the day before its due date. **This is an early smoke.**
     
+    **3/5** milestones have 'Milestone Exceed Warning'.
+
     *Project 3*<br>
     **Milestone 2** may not complete before it's due date because it has more than 50% issues (100) left open on the day before its due date. **This is an early smoke.**
 
@@ -834,6 +838,7 @@ The links to the entire data set for this extractor can be found here
 
     **Milestone 4** may not complete before it's due date because it has more than 50% issues (100) left open on the day before its due date. **This is an early smoke.**
 
+    **3/5** milestones have 'Milestone Exceed Warning'.
 
 **2. Passenger Warning**
 
