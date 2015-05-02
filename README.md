@@ -12,7 +12,7 @@ Issue event data was extracted using the following Github API link:
 https://api.github.com/repos/org_name/repo_name/issues/events (Octokit’s repository_issue_events() method internally utilises it),  The Octokit’s method extracts the issue data from the above mentioned Github API link and returns a list. This list consists of issue features such as the issue creation date, the corresponding label name etc., and were extracted by iterating through the list.
  
 ### Milestone Data Collection:
-Issue event data was extracted using the following Github API link:
+Milestone event data was extracted using the following Github API link:
 https://api.github.com/repos/org_name/repo_name/milestones (Octokit’s list_milestones() method internally utilises it),  The Octokit’s method extracts the milestone data from the above mentioned Github API link and returns a list. This list consists of milestone features such as the milestone end date, milestone update date etc., and were extracted by iterating through the list.
 
 ## Anonymization
