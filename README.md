@@ -15,7 +15,7 @@ https://api.github.com/repos/org_name/repo_name/issues/events (Octokit’s repos
 Milestone event data was extracted using the following Github API link:
 https://api.github.com/repos/org_name/repo_name/milestones (Octokit’s list_milestones() method internally utilises it),  The Octokit’s method extracts the milestone data from the above mentioned Github API link and returns a list. This list consists of milestone features such as the milestone end date, milestone update date etc., and were extracted by iterating through the list.
 
-## Anonymization
+## Anonymization:
 We have taken precautions so that no personal data gets added in the data file or the code files. While using the API we have avoided to fetch personal data if we didnt need it. Many feature extractors didn’t require use of personal information. In code we replaced the personal username with index of array ‘authors’, hence we could replace it with labels like Person_1, Person_2 and so on. 
 
 ## Tables:
@@ -219,9 +219,9 @@ Sample data table:
 |76d102926f51f882aefd8961a058c49538cd817c|2015-04-09 20:38:50 UTC |Person_1|
 
 The links to the entire data set for this extractor can be found here
-* [Project 1](early_smoke/passenger_warning/smoke_scrap_data/project_1_issues.csv)
-* [Project 2](early_smoke/passenger_warning/smoke_scrap_data/project_2_issues.csv)
-* [Project 3](early_smoke/passenger_warning/smoke_scrap_data/project_3_issues.csv)
+* [Project 1](early_smoke/passenger_smoke/project_1_person_commits.csv)
+* [Project 2](early_smoke/passenger_smoke/project_2_person_commits.csv)
+* [Project 3](early_smoke/passenger_smoke/project_3_person_commits.csv)
 
 ## Features & Bad smells(Extractor & Results) 
 
@@ -844,7 +844,7 @@ The links to the entire data set for this extractor can be found here
 
 - __Smoke Detection__
     
-    In this smoke extractor we aim to predict the members that are very likely to be passenegers by the end of the project. We would anlyse that by extracting the commit patterns of the project at various stages of the project. The code for data collection can be found here [scraper.rb](early_smoke/passenger_warning/scraper.rb)
+    In this smoke extractor we aim to predict the members that are very likely to be passenegers by the end of the project. We would anlyse that by extracting the commit patterns of the project at various stages of the project. The code for data collection can be found here [scraper.rb](early_smoke/passenger_smoke/scraper.rb)
 
 - __Smoke detection results__
     
@@ -858,16 +858,15 @@ The links to the entire data set for this extractor can be found here
     |76d102926f51f882aefd8961a058c49538cd817c|2015-04-09 20:38:50 UTC |Person_1|
 
     The links to the entire data set for this extractor can be found here
-
-    * [Project 1](early_smoke/passenger_warning/smoke_scrap_data/project_1_issues.csv)
-    * [Project 2](early_smoke/passenger_warning/smoke_scrap_data/project_2_issues.csv)
-    * [Project 3](early_smoke/passenger_warning/smoke_scrap_data/project_3_issues.csv)
+    * [Project 1](early_smoke/passenger_smoke/project_1_person_commits.csv)
+    * [Project 2](early_smoke/passenger_smoke/project_2_person_commits.csv)
+    * [Project 3](early_smoke/passenger_smoke/project_3_person_commits.csv)
 
 - __Early warning__
     
     We are analysing the commiter's email id as the primary key to identify the contributed, thus there can also be a false alarm if a contributer uses two different email ids. If a contributor has number of commits less than 10% is identified as passenger. We identify such passengers at various project completion stages like 25%, 50% and 75%. If a contributor is consistently identified as passenger at all these stages, then it is an highly likely that the contributor would remain  a passneger for the reminder of the project. We have marked this smoke as 'Passenger Warning'.
 
-    The bad smell detector can be found here [smoke.rb](./early_smoke/passenger_warning/smoke.rb).
+    The bad smell detector can be found here [smoke.rb](./early_smoke/passenger_smoke/smoke.rb).
     <br>*Criteria:*
 
         commits_per_person < 10% (at 25%, 50% and 75% project completion stage)
@@ -877,10 +876,36 @@ The links to the entire data set for this extractor can be found here
     The results are as follows:
     
     *Project 1*<br>
-    **Passenger Warning:** 
+    **Passenger Warning:** No early smoke
     
     *Project 2*<br>
-    **Passenger Warning:** 
+    **Passenger Warning:** No early smoke
     
     *Project 3*<br>
-    **Passenger Warning:** 
+    **Person_0:**<br>
+    ![](./early_smoke/passenger_smoke/smell_results/project_3_person_0.png)<br>
+    **Commits at 25%:**33.33333333333333%<br>
+    **Commits at 50%:**38.88888888888889%<br>
+    **Commits at 75%:**75% 38.94736842105263%<br>    
+    **Passenger Warning:** Not a passenger
+
+    **Person_1:**<br>
+    ![](./early_smoke/passenger_smoke/smell_results/project_3_person_1.png)<br>
+    **Commits at 25%:**14.814814814814813%<br>
+    **Commits at 50%:**36.666666666666664%<br>
+    **Commits at 75%:**75% 34.73684210526316%<br>    
+    **Passenger Warning:** Not a passenger
+
+    **Person_2:**<br>
+    ![](./early_smoke/passenger_smoke/smell_results/project_3_person_2.png)<br>
+    **Commits at 25%:**51.85185185185185%<br>
+    **Commits at 50%:**17.77777777777778%<br>
+    **Commits at 75%:**75% 18.947368421052634%<br>    
+    **Passenger Warning:** Not a passenger
+
+    **Person_3:**<br>
+    ![](./early_smoke/passenger_smoke/smell_results/project_3_person_3.png)<br>
+    **Commits at 25%:**0.0%<br>
+    **Commits at 50%:**6.666666666666667%<br>
+    **Commits at 75%:**75% 7.368421052631578%<br>    
+    **Passenger Warning:** This person is very likely to be a passenger till the end of the project(**early smoke**).
