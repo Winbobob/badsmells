@@ -1,7 +1,7 @@
 ## Collection:
 Data collection was done by using custom ruby scripts. We used Octokit, a ruby client for accessing the Github API. Octokit wraps the Github API in a flat API client that follows ruby conventions. 
 
-Repository name and Project Number(defined by us) are taken as arguments. Repository name is used to query the respective repository for the required features(attributes) using the methods provided by Octokit. Project Number is used to anonymize the csv file storing the extracted data.
+Repository name and a project number(defined by us) are taken as arguments. Repository name is used to query the respective repository for the required features(attributes) using the methods provided by Octokit. Project Number is used to anonymize the csv file storing the extracted data.
 
 ### Commit Data Collection:
 Commit data was extracted using the following Github API link:
@@ -12,21 +12,23 @@ Issue event data was extracted using the following Github API link:
 https://api.github.com/repos/org_name/repo_name/issues/events (Octokit’s repository_issue_events() method internally utilises it),  The Octokit’s method extracts the issue data from the above mentioned Github API link and returns a list. This list consists of issue features such as the issue creation date, the corresponding label name etc., and were extracted by iterating through the list.
  
 ### Milestone Data Collection:
-Issue event data was extracted using the following Github API link:
+Milestone event data was extracted using the following Github API link:
 https://api.github.com/repos/org_name/repo_name/milestones (Octokit’s list_milestones() method internally utilises it),  The Octokit’s method extracts the milestone data from the above mentioned Github API link and returns a list. This list consists of milestone features such as the milestone end date, milestone update date etc., and were extracted by iterating through the list.
 
 ## Anonymization
 We have taken precautions so that no personal data gets added in the data file or the code files. While using the API we have avoided to fetch personal data if we didnt need it. Many feature extractors didn’t require use of personal information. In code we replaced the personal username with index of array ‘authors’, hence we could replace it with labels like Person_1, Person_2 and so on. 
 
 ## Tables:
-In the data collection phase, data of desired features was collected from the Github API and was stored in a CSV file. Then in the data analysis phase, this data was then stored in a hashmap and statistical analysis was performed on this data. Statistical measures like the mean and standard deviation of the data set were extracted. Based on these measures, components showing anomalous behaviour were detected if their values exceeded the mean by more than 2 standard deviations. GNU plots were plotted for this data and bad smells, if any were shown.
+In the data collection phase, data of desired features was collected from the Github API and was stored in a CSV file. Then in the data analysis phase, this data was then stored in a hashmap and statistical analysis was performed on this data. Statistical measures like the mean and standard deviation of the data set were extracted. Based on these measures, components showing anomalous behaviour were detected if their values exceeded the mean by more than 2 standard deviations. GNU plots were plotted for this data and bad smells (if any) were shown.
 
 ## Data:
 
 ### Features:
 
-|Number|Feature|Project1(rows)|Project2(rows)|Project3(rows)|
-|------|-------|--------------|--------------|--------------|
+The values in the table represent the number of rows of data collected for that particular feature.
+
+|Number|Feature|Project1|Project2|Project3|
+|------|-------|--------|--------|--------|
 |1|Uneven Commit History|121|510|182|
 |2|Uneven Commits Per Person|117|483|168|
 |3|Uneven Issues Per Label|201|120|107|
@@ -40,8 +42,10 @@ In the data collection phase, data of desired features was collected from the Gi
 
 ### Early warnings:
 
-|Number|Feature|Project1(rows)|Project2(rows)|Project3(rows)|
-|------|-------|--------------|--------------|--------------|
+The values in the table represent the number of rows of data collected for that particular warning.
+
+|Number|Feature|Project1|Project2|Project3|
+|------|-------|--------|--------|--------|
 |1|Milestone Deadline Exceed Warning|35|56|64|
 |2|Passenger Warning|117|483|168|
 
@@ -287,7 +291,7 @@ The links to the entire data set for this extractor can be found here
     Sample data table: 
 
     | Milestone |created_at| closed_at| Time Spent (Days) |
-    |-----------|----------|----------|------------------
+    |-----------|----------|----------|------------------|
     |Milestone 1: Feasibility & Requirement Analysis|2015-02-15 21:40:03 UTC| 2015-02-28 20:25:37 UTC | 13|
     |Milestone 2: Minimum Viable Product (MVP)|2015-02-28 20:25:37 UTC| 2015-03-20 20:25:37 UTC | 20|
 
@@ -804,31 +808,31 @@ The links to the entire data set for this extractor can be found here
     The results are as follows:
     
     *Project 1*<br>
-    **Milestone** 1 may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone** 1 may not complete before it's due date because it has more than 50% issues (100) left open on the day before its due date. **This is an early smoke.**
 
-    **Milestone 2** may not complete before it's due date because it has more than 50% issues (81) left open on the last day before its due date. This is an early smoke.
+    **Milestone 2** may not complete before it's due date because it has more than 50% issues (81) left open on the day before its due date. **This is an early smoke.**
 
-    **Milestone 3** may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone 3** may not complete before it's due date because it has more than 50% issues (100) left open on the day before its due date. **This is an early smoke.**
 
-    **Milestone 4** may not complete before it's due date because it has more than 50% issues (81) left open on the last day before its due date. This is an early smoke.
+    **Milestone 4** may not complete before it's due date because it has more than 50% issues (81) left open on the day before its due date. **This is an early smoke.**
 
-    **Milestone 5** may not complete before it's due date because it has more than 50% issues (66) left open on the last day before its due date. This is an early smoke
+    **Milestone 5** may not complete before it's due date because it has more than 50% issues (66) left open on the day before its due date. **This is an early smoke.**
     
     *Project 2*<br>
-    **Milestone 2** may not complete before it's due date because it has more than 50% issues (73) left open on the last day before its due date. This is an early smoke.
+    **Milestone 2** may not complete before it's due date because it has more than 50% issues (73) left open on the day before its due date. **This is an early smoke.**
 
-    **Milestone 4** may not complete before it's due date because it has more than 50% issues (57) left open on the last day before its due date. This is an early smoke.
+    **Milestone 4** may not complete before it's due date because it has more than 50% issues (57) left open on the day before its due date. **This is an early smoke.**
 
 
-    **Milestone 5** may not complete before it's due date because it has more than 50% issues (87) left open on the last day before its due date. This is an early smoke. 
+    **Milestone 5** may not complete before it's due date because it has more than 50% issues (87) left open on the day before its due date. **This is an early smoke.**
     
     *Project 3*<br>
-    **Milestone 2** may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone 2** may not complete before it's due date because it has more than 50% issues (100) left open on the day before its due date. **This is an early smoke.**
 
-    **Milestone 3** may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone 3** may not complete before it's due date because it has more than 50% issues (100) left open on the day before its due date. **This is an early smoke.**
 
 
-    **Milestone 4** may not complete before it's due date because it has more than 50% issues (100) left open on the last day before its due date. This is an early smoke.
+    **Milestone 4** may not complete before it's due date because it has more than 50% issues (100) left open on the day before its due date. **This is an early smoke.**
 
 
 **2. Passenger Warning**
